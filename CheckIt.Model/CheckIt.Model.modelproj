@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09e2bbcd-6118-4b0f-ad08-593e4228c819}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>CheckIt.Model</Name>
+    <RootNamespace>CheckIt.Model</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="Use Case\Account.Checklists.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Use Case\Account.Checklists.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Use Case\Account.Checklists.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Use Case\Account.Manage.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Use Case\Account.Manage.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Use Case\Account.Manage.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Use Case\Account.Share.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Use Case\Account.Share.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Use Case\Account.Share.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Use Case\Admin.Catalog.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Use Case\Admin.Catalog.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Use Case\Admin.Catalog.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Use Case\Catalog.Browse.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Use Case\Catalog.Browse.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Use Case\Catalog.Browse.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Use Case\Catalog.Search.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Use Case\Catalog.Search.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Use Case\Catalog.Search.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Use Case\MyChecklist.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Use Case\MyChecklist.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Use Case\MyChecklist.usecasediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ComponentDiagram.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ComponentDiagram.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ComponentDiagram.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="DomainDiagram.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="DomainDiagram.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>DomainDiagram.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\CheckIt.Model.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Use Case" />
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="LayerDiagram.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="LayerDiagram.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>LayerDiagram.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="LayerDiagram.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>LayerDiagram.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

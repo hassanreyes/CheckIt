@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="421d7b5c-6e72-4118-84a0-87ea2bbf9d50" name="Account.Share" linkedPackageId="5a04e725-2acb-467e-abc4-10851d2dd340" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="84b35c34-b527-4aa0-acdd-a2c17da333f3" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d8516ec-35fa-4f93-9c84-435bad6ec5ba" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="8b728bee-51a7-43ff-bfad-c2e3fe9388d9" name="LoggedInUser" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="68c0194e-8f47-4da0-b1da-c92595f4b901" />
+        <generalsInternal>
+          <generalization Id="40fd3fea-c537-418b-a84f-19c0c8f6094f" isSubstitutable="false">
+            <actorMoniker Id="84b35c34-b527-4aa0-acdd-a2c17da333f3" LastKnownName="User" />
+            <elementDefinition Id="a54b5251-d6d7-41f4-bc0a-a62db018f041" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="b9c15bbd-e625-47f6-a22b-d10fd2ddd07f" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Share" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f81c1b6a-935c-4243-aa71-26cac63a49f1" LastKnownName="Share" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4e4273a2-02ea-4b2b-b844-630e4a282cba" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="26f7b897-8242-45bf-8ba5-5412345b8e08" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3d90e20d-1d2b-43d1-91cf-676a0bfb6c62" name="Share" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e1ffb869-60a1-4c5d-8dbf-e39b216c3c69" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3bf4b059-d8e5-4c13-9cef-931812063b4c" />
+          </association>
+          <association Id="0af680ff-2602-429b-90b0-d77acd9eeacb" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Not Share" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0d13a8a6-b225-474d-b21e-c9d4ca69e7b2" LastKnownName="Not Share" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="22253260-b525-40b4-b735-0ab6cf8a299a" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="442886f3-ff8d-43f9-983b-04c3e91ed417" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e8a35dbd-66be-4856-ae48-0e49a64247c2" name="Not Share" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0fef52a9-1f43-43aa-a6e1-a25056c9d07a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="abb9710a-a424-47fd-949c-5d0de04e5f2a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="f81c1b6a-935c-4243-aa71-26cac63a49f1" name="Share" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f0f5b2c3-d222-451b-a1f1-052139630079" />
+        <extendedCases>
+          <extend Id="c7d80000-5281-40df-8f00-e8c84dd4990e">
+            <useCaseMoniker Id="0a0e2cd0-3263-4863-a5cf-8ed3891c3f83" LastKnownName="Generate Link" />
+            <elementDefinition Id="b5876f61-23f6-431d-8449-dae5857db9a2" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="10732922-0187-4f86-b9d2-ac73df8410f5">
+            <useCaseMoniker Id="7c6e3124-e7b9-4db6-bdb7-f5f94bd2cf79" LastKnownName="Change Checklist Visibility" />
+            <elementDefinition Id="a1df4ce3-be4b-4642-b3b0-ad73171ab0e9" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="14d0099f-34a3-4fcd-9474-26c07407ad24" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="d06358f3-cc00-4792-bbfe-24da9fdebf9f" name="CheckIt.Framework" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e628160c-28a4-4ec1-a8a3-4bc456eee0a1" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="0a0e2cd0-3263-4863-a5cf-8ed3891c3f83" name="Generate Link" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="650e44ef-606a-4948-aa66-b512b647f2ab" />
+        <subjects>
+          <subsystemMoniker Id="d06358f3-cc00-4792-bbfe-24da9fdebf9f" LastKnownName="CheckIt.Framework" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="db1ab47b-eb28-4556-acf4-cbdde48c62dd" name="CheckIt.Data" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="55feaea3-8077-4930-ba3a-0ed8d8f70c88" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="7c6e3124-e7b9-4db6-bdb7-f5f94bd2cf79" name="Change Checklist Visibility" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f563aa6a-ae21-42c7-b9ff-d0430588cfca" />
+        <subjects>
+          <subsystemMoniker Id="db1ab47b-eb28-4556-acf4-cbdde48c62dd" LastKnownName="CheckIt.Data" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="0d13a8a6-b225-474d-b21e-c9d4ca69e7b2" name="Not Share" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4bf31ac7-fb86-43d7-be6c-152c187f8d68" />
+        <additions>
+          <include Id="11298055-5381-4462-9c29-2afa6e2dc066">
+            <useCaseMoniker Id="7c6e3124-e7b9-4db6-bdb7-f5f94bd2cf79" LastKnownName="Change Checklist Visibility" />
+            <elementDefinition Id="820c5dd5-7db8-41be-9ab1-327026718968" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="14d0099f-34a3-4fcd-9474-26c07407ad24" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="14d0099f-34a3-4fcd-9474-26c07407ad24" name="CheckIt.Web.Account" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="25630ba9-dfaf-4c42-81cd-ecf9106fd847" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="5a04e725-2acb-467e-abc4-10851d2dd340" name="CheckIt.Model">
+    <elementDefinition Id="92f782f7-87c8-4d2b-b644-030360ed0d5e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="acfc1e54-a5af-40e7-affd-0bf73c37406f">
+        <profileInstance Id="b5b8562c-4514-43b6-92e2-ee843d0ec1ce" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="c90fb1d6-3466-499a-a02e-4a1568e1adad">
+        <profileInstance Id="bdde30af-98fa-4bf5-ba32-9f610811fb13" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

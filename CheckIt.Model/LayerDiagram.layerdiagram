@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="55b834fb-aad6-4d72-bfe8-8942281e1651" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="e50f60b5-1166-4f2f-95bf-bcff32c0b387" name="CheckIt.Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f460787e-ca04-422b-a58e-4ddc732cdbef" direction="Forward">
+          <layerMoniker Id="cd26507c-c2cf-4cab-ace4-58946cbab751" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="e76c26cf-1e20-4c09-9918-65928fbd90ad" direction="Forward">
+          <layerMoniker Id="2d0f74ad-f6ed-4da7-b6b4-c2dcfcf696c0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="ebb3bdbd-d88c-4725-acab-a0a5f1ec9f35" direction="Forward">
+          <layerMoniker Id="dfe678da-8372-433d-ad25-3049ee63e473" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="0aceb4ea-2db7-4c09-98b9-df1fd29dbd9f" direction="Forward">
+          <layerMoniker Id="e03bef92-f07e-4b8d-8a79-8d124afc2ab4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="9d871e34-d9f9-4461-a1cf-7df8c3ccc571" name="CheckIt.Web">
+          <ArtifactNode Label="CheckIt.Web" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CheckIt/CheckIt/CheckIt.Web.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CheckIt)" Label="CheckIt.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="2d0f74ad-f6ed-4da7-b6b4-c2dcfcf696c0" name="CheckIt.Data">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8bc0d595-556d-476e-a9e1-0951e2777ac5" direction="Forward">
+          <layerMoniker Id="cd26507c-c2cf-4cab-ace4-58946cbab751" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="81add654-37b7-461e-a2cf-88f76f641f05" name="CheckIt.Data">
+          <ArtifactNode Label="CheckIt.Data" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CheckIt/CheckIt.Data/CheckIt.Data.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CheckIt.Data)" Label="CheckIt.Data.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="dfe678da-8372-433d-ad25-3049ee63e473" name="CheckIt.Framework">
+      <references>
+        <reference Id="b38a9d35-5666-41b2-81bd-9d96e51974e9" name="CheckIt.Framework">
+          <ArtifactNode Label="CheckIt.Framework" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CheckIt/CheckIt.Framework/CheckIt.Framework.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CheckIt.Framework)" Label="CheckIt.Framework.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="cd26507c-c2cf-4cab-ace4-58946cbab751" name="CheckIt.Entities">
+      <references>
+        <reference Id="da8717c2-04ab-44f6-b823-15eab6f886ad" name="CheckIt.Entities">
+          <ArtifactNode Label="CheckIt.Entities" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CheckIt/CheckIt.Entities/CheckIt.Entities.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CheckIt.Entities)" Label="CheckIt.Entities.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="8d04cde9-4ba5-4bf1-af8d-a84beddb6b74" name="CheckIt.Admin">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="cac87fdc-8be9-4003-a74b-08e1655523d9" direction="Forward">
+          <layerMoniker Id="2d0f74ad-f6ed-4da7-b6b4-c2dcfcf696c0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="ac1cf526-40ee-4299-beaf-14a3f8fa4363" direction="Forward">
+          <layerMoniker Id="cd26507c-c2cf-4cab-ace4-58946cbab751" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="498012d2-b9e8-4eab-af19-b7cda6ed26d8" direction="Forward">
+          <layerMoniker Id="dfe678da-8372-433d-ad25-3049ee63e473" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="7cd45e4c-9a3b-4477-9c0f-43917a543505" direction="Forward">
+          <layerMoniker Id="e03bef92-f07e-4b8d-8a79-8d124afc2ab4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="b61bd0b7-507a-4e03-845a-cd90d1802f0f" name="CheckIt.Admin">
+          <ArtifactNode Label="CheckIt.Admin" Category="CodeSchema_Project" Id="(Assembly=&quot;$(PersonalUri)/visual studio 2013/Projects/CheckIt/CheckIt.Admin/CheckIt.Admin.csproj&quot;)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=CheckIt.Admin)" Label="CheckIt.Admin.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="1b239cdc-25c1-448f-81df-da3b77e5e77f" name="ASP.NET" />
+    <layer Id="e03bef92-f07e-4b8d-8a79-8d124afc2ab4" name="MVC">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="4565a8e7-c5de-45d2-b2b2-883c21f35181" direction="Forward">
+          <layerMoniker Id="1b239cdc-25c1-448f-81df-da3b77e5e77f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="d3f92ab9-a8d7-48dd-9c95-0d40a1b22c88" name="Catalog.Search" linkedPackageId="f42aa8a1-801a-45da-8dbe-0e397e8b697b" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="ec483aaa-664f-4ddb-971d-3e9e70e813cc">
+      <elementDefinition Id="c70acb3a-fcc4-4ba6-bdb8-d1dbf9a1e687" />
+      <body>It shall be possible perform a search call from a REST client, response shall be JSON formatted</body>
+      <annotatedElements>
+        <actorMoniker Id="3f9c066e-114f-447f-95f1-25710b7bac15" LastKnownName="REST Client" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="18fa546b-a514-4595-b747-17960f4fe4a4" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d8516ec-35fa-4f93-9c84-435bad6ec5ba" />
+        <targetEnds>
+          <association Id="1e3c981a-594d-472f-b4b8-b94e3d721ee4" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Search" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="533f08db-9860-4a8a-806c-a43179a0fcf2" LastKnownName="Search" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0272e1c1-38ba-4d80-b546-8eee3d6f2eaf" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="da16cc74-5b54-4fd3-b134-6bea840c3803" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3d0400f1-8802-4569-a3f9-9f94d375fa92" name="Search" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="764c4116-6e21-4980-9177-c324f7ff229f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f3bb8360-f2fe-4ef8-bdfc-b145d2538136" />
+          </association>
+          <association Id="65be6b95-9a65-4c1f-94f4-0a97b0715b84" isDerived="false" sourceEndRoleName="User" targetEndRoleName="View Checklist" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5737c74a-93ce-4d60-ac7b-35344707429f" LastKnownName="View Checklist" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4f75bc12-09ec-43bd-bdc0-fccb2e24709a" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7d914138-dfc4-485f-be8b-15957f27a123" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c1da8631-7bb5-4cf7-a53d-2cdeedb88e4e" name="View Checklist" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1637ca3d-5dcf-48ec-ac96-4f59539d80f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f8c61fdc-74ae-4b87-8769-61628338db14" />
+          </association>
+          <association Id="0e50b258-eeab-462c-86de-6bd4fa90e915" isDerived="false" sourceEndRoleName="User" targetEndRoleName="View Topic" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="592dc58b-8b26-47c9-a787-99471bec7218" LastKnownName="View Topic" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="446327e0-e360-4f56-acce-83c17eb5ea64" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d0f95075-bcf0-4e57-b933-c1d187990f07" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4564c7f0-5d1c-491d-993a-bbac2914bb74" name="View Topic" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="136b2cce-7762-47ae-bca9-07d683951837" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="baf2b6b9-fa93-413f-9a10-29271322bb60" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="cd98fef8-4150-46c0-be1d-c04e3cfa9513" name="LoggedInUser" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="68c0194e-8f47-4da0-b1da-c92595f4b901" />
+        <generalsInternal>
+          <generalization Id="afd0e704-2613-4062-a680-7eda2c7c9b00" isSubstitutable="false">
+            <actorMoniker Id="18fa546b-a514-4595-b747-17960f4fe4a4" LastKnownName="User" />
+            <elementDefinition Id="a54b5251-d6d7-41f4-bc0a-a62db018f041" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="533f08db-9860-4a8a-806c-a43179a0fcf2" name="Search" isAbstract="false" isLeaf="false">
+        <description>Enters one or more keywords in order to perform the search
+</description>
+        <elementDefinition Id="2abad691-ff75-4d2f-911c-32476fdae771" />
+        <additions>
+          <include Id="1a2d195c-b700-4eab-a975-011a3ea6ad4e">
+            <useCaseMoniker Id="df32a36b-7823-403e-8eb9-c5ec61af50f6" LastKnownName="Find Checklist" />
+            <elementDefinition Id="100f66fb-c589-4379-aae8-329e92ab5932" />
+          </include>
+          <include Id="c1094d72-153b-4839-949b-2908e124520b">
+            <useCaseMoniker Id="570cab9a-4b16-4db2-92ac-8122d688d1ae" LastKnownName="Find Topic" />
+            <elementDefinition Id="894188c2-291b-4a4c-a8dd-aeab80415575" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="59cffffb-e786-4d8d-8a06-2d672c1cca8e" LastKnownName="CheckIt.Web.Catalog" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="3f9c066e-114f-447f-95f1-25710b7bac15" name="REST Client" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d8638e2d-b392-4d6f-87d5-7fec4695966c" />
+        <targetEnds>
+          <association Id="ad4791c8-390b-4b71-b34a-3bdf1aa058c4" isDerived="false" sourceEndRoleName="REST Client" targetEndRoleName="Search" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="533f08db-9860-4a8a-806c-a43179a0fcf2" LastKnownName="Search" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3466e1a-6ce0-44bb-b925-54692d65c3fe" name="REST Client" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c748110e-dac5-4416-8c22-e0e66be241b5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6d58cf9d-abb2-4cd0-b1ef-f1bf858992be" name="Search" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6c212bfb-c049-47aa-8b57-96a3bfebc6ad" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6240dc7e-e50a-40f1-ab04-1d169bbd6f37" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="d0c0d24d-745a-446e-8f09-1f864fcc9642" name="CheckIt.Data" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="55feaea3-8077-4930-ba3a-0ed8d8f70c88" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="df32a36b-7823-403e-8eb9-c5ec61af50f6" name="Find Checklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0adcd698-83cf-45bd-a6fa-e82e5537b8bb" />
+        <subjects>
+          <subsystemMoniker Id="d0c0d24d-745a-446e-8f09-1f864fcc9642" LastKnownName="CheckIt.Data" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="570cab9a-4b16-4db2-92ac-8122d688d1ae" name="Find Topic" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b6448480-1044-430b-bc74-99bda5632160" />
+        <subjects>
+          <subsystemMoniker Id="d0c0d24d-745a-446e-8f09-1f864fcc9642" LastKnownName="CheckIt.Data" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="9fd746f3-d7ef-485f-9184-402f3178c86e" name="Add To MyChecklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="603c2a35-376b-48e6-b2bc-5b0992741660" />
+        <subjects>
+          <subsystemMoniker Id="59cffffb-e786-4d8d-8a06-2d672c1cca8e" LastKnownName="CheckIt.Web.Catalog" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="59cffffb-e786-4d8d-8a06-2d672c1cca8e" name="CheckIt.Web.Catalog" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="92ae417b-e01d-437d-9718-bd176c53a463" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="5737c74a-93ce-4d60-ac7b-35344707429f" name="View Checklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea644824-b5d5-4157-9e39-764ba3e74f64" />
+        <extendedCases>
+          <extend Id="3fceda19-4f5e-4135-a9dc-0d0586fd69fe">
+            <useCaseMoniker Id="592dc58b-8b26-47c9-a787-99471bec7218" LastKnownName="View Topic" />
+            <elementDefinition Id="de6cb769-c029-4c89-87e4-231a92980832" />
+          </extend>
+          <extend Id="e3e24d6f-7902-47a0-b9dc-09b6f8261414">
+            <useCaseMoniker Id="9fd746f3-d7ef-485f-9184-402f3178c86e" LastKnownName="Add To MyChecklist" />
+            <elementDefinition Id="e36e6a8d-d666-4102-b9aa-021c73252c49" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="59cffffb-e786-4d8d-8a06-2d672c1cca8e" LastKnownName="CheckIt.Web.Catalog" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="592dc58b-8b26-47c9-a787-99471bec7218" name="View Topic" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="853d4b04-3a63-4864-bf4d-4a9a445956cb" />
+        <extendedCases>
+          <extend Id="e0232cd7-7361-4fc7-b3c5-1ae12c9aa41d">
+            <useCaseMoniker Id="9fd746f3-d7ef-485f-9184-402f3178c86e" LastKnownName="Add To MyChecklist" />
+            <elementDefinition Id="db025e23-deea-442d-9cd5-784cc8d1dd92" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="59cffffb-e786-4d8d-8a06-2d672c1cca8e" LastKnownName="CheckIt.Web.Catalog" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="f42aa8a1-801a-45da-8dbe-0e397e8b697b" name="CheckIt.Model">
+    <elementDefinition Id="92f782f7-87c8-4d2b-b644-030360ed0d5e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="2ad212b6-8c01-4c50-98c2-3368fed27e9f">
+        <profileInstance Id="56bb9604-93aa-42b0-8fbb-d1e3df1385f2" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="31885240-0ade-43ab-b714-d16469696e88">
+        <profileInstance Id="4f5f1e13-c973-4379-9537-a9d7bf615a3f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

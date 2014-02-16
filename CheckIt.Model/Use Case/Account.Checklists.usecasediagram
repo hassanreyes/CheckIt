@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="1896023d-419f-4e97-9398-094af3b6294f" name="Account.Checklists" linkedPackageId="11ca515c-7e24-41e8-8abb-0c45706aca69" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="b017cb38-7e4d-4261-8bc2-fa379e36bd0c" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d8516ec-35fa-4f93-9c84-435bad6ec5ba" />
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="ea7007ce-a55f-4796-8315-f227dfc08d5f" name="LoggedInUser" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="68c0194e-8f47-4da0-b1da-c92595f4b901" />
+        <generalsInternal>
+          <generalization Id="249640aa-d765-433b-b974-fc7514444b19" isSubstitutable="false">
+            <actorMoniker Id="b017cb38-7e4d-4261-8bc2-fa379e36bd0c" LastKnownName="User" />
+            <elementDefinition Id="a54b5251-d6d7-41f4-bc0a-a62db018f041" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="3cdd37e8-a68e-467a-ad03-b2511b1fd672" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Create Folder" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="43b45cb4-0dcd-4721-bcf0-b3c2a004d3b2" LastKnownName="Create Folder" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dd3aaa71-c50b-409d-adb8-517b61598777" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c5ce93ed-136b-40cc-afb0-42d05acb554a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4324cafe-f195-4ec7-90c3-ca37e50f93b8" name="Create Folder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d723f3a6-970a-455b-a438-d94e279b4460" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b1a7d88e-5aaf-411d-a205-bd480a7e53e8" />
+          </association>
+          <association Id="6f0bb4f5-4356-4f28-9118-821f49983f78" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Create Checklist" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a0fd81fb-0f46-4b73-9331-774c572bb855" LastKnownName="Create Checklist" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="410ba518-cd65-499a-98f0-f643b18d15ec" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="734371a3-6103-444b-9b09-8ea432169379" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b3df5886-a750-452c-b845-dc93b146b0ea" name="Create Checklist" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bd7581f2-8b20-44b0-a638-ceb90c4efc20" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="22439ee3-785c-4aaf-a092-715977179b7b" />
+          </association>
+          <association Id="94b9405d-be20-4147-923b-d02581f280e9" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Remove Folder" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a5223dfe-0948-43ae-8326-443ea8331f1f" LastKnownName="Remove Folder" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0db051b-f808-426a-82f6-00473cb33c27" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bd76db5b-fde6-4e87-91fe-ac009e8df6f2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8ce9ef59-4cf6-4403-a9f9-690bc64046b9" name="Remove Folder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7c9cf6ee-43f1-426e-967b-694333660eef" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1d818dda-ac00-4836-9d2b-acea520752e5" />
+          </association>
+          <association Id="89f26f52-eaa8-4a0b-8a4d-c3d10f980403" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Remove Checklist" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="55f31974-ddbf-4d6e-a63c-33cab4e12798" LastKnownName="Remove Checklist" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="297370dc-01e7-41bf-9440-97d5ddd87511" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3d096dab-9605-44a4-bb96-dfb99a3b67db" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ed263f3a-badd-4070-a90d-fa50354d24e5" name="Remove Checklist" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="38e0b346-f6bf-4f9b-ab9e-17ecba529edd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a41eaad4-c4dc-4fce-9921-f4cb3db60a9d" />
+          </association>
+          <association Id="b15d33e5-9ac6-4048-890f-50eb46f2bb8b" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Rename Folder" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ebef548e-c157-4704-8276-58ad73e77858" LastKnownName="Rename Folder" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="36740fba-580e-4dd8-ba05-d45609430808" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="dcfbd073-bc2e-43fe-af12-09fa80bc307b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="36e8b083-0ba8-4976-94b2-b0ba5ea32859" name="Rename Folder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f8c70b73-4849-437c-93fd-453ee304952b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2e44931d-c7ba-446d-8e0a-7161e32e770c" />
+          </association>
+          <association Id="eb9de67f-4ac8-49aa-9df0-fa8205edc192" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Move Checklist" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f8fa0ec1-e904-42a0-ae9a-d9f4419619ed" LastKnownName="Move Checklist" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a13ea437-499f-452b-9b58-884afd74e2f4" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b9276d6d-665c-430a-81b9-cc00f9b99d0b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9302a4e1-97fe-4052-8c3b-facd5d98c3d4" name="Move Checklist" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="270ebae3-1896-4a36-93bb-db8397e8e94e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="44f3268e-0bf2-4f2f-b09b-a6d8ca622803" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="43b45cb4-0dcd-4721-bcf0-b3c2a004d3b2" name="Create Folder" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ce4f52ab-33e0-45ea-8656-2b9d5973d495" />
+        <subjects>
+          <subsystemMoniker Id="e878e8cc-21f5-4ff5-a77b-4188f9699ead" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="a0fd81fb-0f46-4b73-9331-774c572bb855" name="Create Checklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="08857910-86d6-427a-9ca6-0011787299a2" />
+        <subjects>
+          <subsystemMoniker Id="e878e8cc-21f5-4ff5-a77b-4188f9699ead" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="a5223dfe-0948-43ae-8326-443ea8331f1f" name="Remove Folder" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="faec66a6-2682-45f7-8d56-0ce7170ac073" />
+        <subjects>
+          <subsystemMoniker Id="e878e8cc-21f5-4ff5-a77b-4188f9699ead" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="55f31974-ddbf-4d6e-a63c-33cab4e12798" name="Remove Checklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="013d4045-12b0-409e-9fbe-d6048b2786fc" />
+        <subjects>
+          <subsystemMoniker Id="e878e8cc-21f5-4ff5-a77b-4188f9699ead" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="ebef548e-c157-4704-8276-58ad73e77858" name="Rename Folder" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ddf5726e-a9de-479d-80d3-fba0b6f9113f" />
+        <additions>
+          <include Id="1fd339f3-77e5-44cc-bc1c-f0b4950f534f">
+            <useCaseMoniker Id="43b45cb4-0dcd-4721-bcf0-b3c2a004d3b2" LastKnownName="Create Folder" />
+            <elementDefinition Id="38e44af1-1fcd-4ce2-a50f-b2c4b8fee36f" />
+          </include>
+          <include Id="74b9ef71-8d14-4112-95dc-b03d461d99b5">
+            <useCaseMoniker Id="a5223dfe-0948-43ae-8326-443ea8331f1f" LastKnownName="Remove Folder" />
+            <elementDefinition Id="64b480de-8505-49d1-94f2-d3b99d9c9afd" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="e878e8cc-21f5-4ff5-a77b-4188f9699ead" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="e878e8cc-21f5-4ff5-a77b-4188f9699ead" name="CheckIt.Web.Account" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="25630ba9-dfaf-4c42-81cd-ecf9106fd847" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="f8fa0ec1-e904-42a0-ae9a-d9f4419619ed" name="Move Checklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a0d644b7-2e52-4010-99c9-6f78cc7a594a" />
+        <subjects>
+          <subsystemMoniker Id="e878e8cc-21f5-4ff5-a77b-4188f9699ead" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="11ca515c-7e24-41e8-8abb-0c45706aca69" name="CheckIt.Model">
+    <elementDefinition Id="92f782f7-87c8-4d2b-b644-030360ed0d5e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="082d0df1-76c5-4961-a58b-2eff79f038a0">
+        <profileInstance Id="272ec8b3-9ca0-41cc-8f28-6015e453c9f3" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a85e48bb-e126-4c73-83e4-eea0692f833d">
+        <profileInstance Id="97d64412-cf55-4585-9432-8d5104871e64" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

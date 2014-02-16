@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="40780b2f-2cdc-4de4-8e62-8932b9a6252d" name="Catalog.Browse" linkedPackageId="df741a28-2cf4-41fe-a002-ff03eed53f16" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="bd8a7473-30a3-4773-8c17-ad971534dd6b" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d8516ec-35fa-4f93-9c84-435bad6ec5ba" />
+        <targetEnds>
+          <association Id="fb7f9bc0-f0b4-4a51-9dd4-5fc12c2e1338" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Browse" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e2f968a8-fe69-48ca-ba1a-52ad2b68a85d" LastKnownName="Browse" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="866c6111-1079-4b24-ac6f-f67130dc9a2e" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3c6c9258-88bc-4593-8f4c-6ca2206344b2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="679b98bd-a5b6-4393-818a-4f83b4997917" name="Browse" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="615a25fb-5ae8-4729-a919-96cf6cfba2c7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="db837af0-d0ab-43f6-ad69-c512915313da" />
+          </association>
+          <association Id="142cce28-f8e6-4abf-b680-fc6dc2cf0866" isDerived="false" sourceEndRoleName="User" targetEndRoleName="View Checklist" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a3508d61-b4e4-44dd-8736-5885ff44812f" LastKnownName="View Checklist" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="47061601-bcba-4282-8467-0e6b8905286e" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7d914138-dfc4-485f-be8b-15957f27a123" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0f30d9f3-da98-4935-9504-a51c218d8a87" name="View Checklist" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1637ca3d-5dcf-48ec-ac96-4f59539d80f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f8c61fdc-74ae-4b87-8769-61628338db14" />
+          </association>
+          <association Id="bded8047-b0ce-47b6-8fe8-51daa50d68e7" isDerived="false" sourceEndRoleName="User" targetEndRoleName="View Topic" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="443e55a8-8ac0-41bc-b58c-f60758eb79c1" LastKnownName="View Topic" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="13a504c1-0402-41d0-8895-d3f013ab23e8" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d0f95075-bcf0-4e57-b933-c1d187990f07" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="54427f8f-e5d5-4e98-b2d0-97ff1852e31a" name="View Topic" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="136b2cce-7762-47ae-bca9-07d683951837" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="baf2b6b9-fa93-413f-9a10-29271322bb60" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="39e0c4c1-e3c6-4b5e-8b2a-d1916d8575e1" name="LoggedInUser" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="68c0194e-8f47-4da0-b1da-c92595f4b901" />
+        <generalsInternal>
+          <generalization Id="7be1d1c1-a627-4e8a-8302-c65611150749" isSubstitutable="false">
+            <actorMoniker Id="bd8a7473-30a3-4773-8c17-ad971534dd6b" LastKnownName="User" />
+            <elementDefinition Id="a54b5251-d6d7-41f4-bc0a-a62db018f041" />
+          </generalization>
+        </generalsInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="e2f968a8-fe69-48ca-ba1a-52ad2b68a85d" name="Browse" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8a627a8a-51f1-407e-a99f-5094514816d8" />
+        <additions>
+          <include Id="6c2121ef-337f-42f3-b0a3-d0cabe4d2250">
+            <useCaseMoniker Id="1ddee4f2-fea4-40e5-a300-6944fb064e0f" LastKnownName="Find Checklist" />
+            <elementDefinition Id="dd93b955-36e8-4864-b477-903437c76541" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="fc769bb8-98b9-4e94-a47a-22d9b2bf8e56" LastKnownName="CheckIt.Web.Catalog" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5d8be2c9-c37b-45dc-9028-035ad0973842" name="Add To MyChecklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="603c2a35-376b-48e6-b2bc-5b0992741660" />
+        <subjects>
+          <subsystemMoniker Id="fc769bb8-98b9-4e94-a47a-22d9b2bf8e56" LastKnownName="CheckIt.Web.Catalog" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="e252ee43-961a-4618-aa01-640afa6fcc5c" name="CheckIt.Data" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="55feaea3-8077-4930-ba3a-0ed8d8f70c88" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="1ddee4f2-fea4-40e5-a300-6944fb064e0f" name="Find Checklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0adcd698-83cf-45bd-a6fa-e82e5537b8bb" />
+        <subjects>
+          <subsystemMoniker Id="e252ee43-961a-4618-aa01-640afa6fcc5c" LastKnownName="CheckIt.Data" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="fc769bb8-98b9-4e94-a47a-22d9b2bf8e56" name="CheckIt.Web.Catalog" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="92ae417b-e01d-437d-9718-bd176c53a463" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="a3508d61-b4e4-44dd-8736-5885ff44812f" name="View Checklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea644824-b5d5-4157-9e39-764ba3e74f64" />
+        <extendedCases>
+          <extend Id="f24b9ca3-575d-462c-b886-c39783b5cf91">
+            <useCaseMoniker Id="443e55a8-8ac0-41bc-b58c-f60758eb79c1" LastKnownName="View Topic" />
+            <elementDefinition Id="de6cb769-c029-4c89-87e4-231a92980832" />
+          </extend>
+          <extend Id="7431750d-820a-4a63-85c7-ef72e74ac1e1">
+            <useCaseMoniker Id="5d8be2c9-c37b-45dc-9028-035ad0973842" LastKnownName="Add To MyChecklist" />
+            <elementDefinition Id="e36e6a8d-d666-4102-b9aa-021c73252c49" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="fc769bb8-98b9-4e94-a47a-22d9b2bf8e56" LastKnownName="CheckIt.Web.Catalog" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="443e55a8-8ac0-41bc-b58c-f60758eb79c1" name="View Topic" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="853d4b04-3a63-4864-bf4d-4a9a445956cb" />
+        <extendedCases>
+          <extend Id="264b0f6b-b21f-4a7a-b6ff-29819449b3cc">
+            <useCaseMoniker Id="5d8be2c9-c37b-45dc-9028-035ad0973842" LastKnownName="Add To MyChecklist" />
+            <elementDefinition Id="db025e23-deea-442d-9cd5-784cc8d1dd92" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="fc769bb8-98b9-4e94-a47a-22d9b2bf8e56" LastKnownName="CheckIt.Web.Catalog" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="df741a28-2cf4-41fe-a002-ff03eed53f16" name="CheckIt.Model">
+    <elementDefinition Id="92f782f7-87c8-4d2b-b644-030360ed0d5e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="8b6ed18c-3baf-4aea-83fa-825a9fc243bd">
+        <profileInstance Id="27ad225b-a415-4327-b7b2-7545eb7d96a5" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="93ee352a-bf4f-474d-b8e2-a940323d350d">
+        <profileInstance Id="2a330988-f988-477a-bbbe-3b8c81e6ad3d" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

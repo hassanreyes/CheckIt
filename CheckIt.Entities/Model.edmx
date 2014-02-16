@@ -1,0 +1,1416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CheckIt.Entities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CheckItEntitiesStoreContainer">
+    <EntitySet Name="Checklists" EntityType="CheckIt.Entities.Store.Checklists" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Sections" EntityType="CheckIt.Entities.Store.Sections" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Items" EntityType="CheckIt.Entities.Store.Items" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Users" EntityType="CheckIt.Entities.Store.Users" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Accounts" EntityType="CheckIt.Entities.Store.Accounts" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Categorys" EntityType="CheckIt.Entities.Store.Categorys" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Keywords" EntityType="CheckIt.Entities.Store.Keywords" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Favorites" EntityType="CheckIt.Entities.Store.Favorites" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Areas" EntityType="CheckIt.Entities.Store.Areas" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Folders" EntityType="CheckIt.Entities.Store.Folders" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Shares" EntityType="CheckIt.Entities.Store.Shares" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Answers" EntityType="CheckIt.Entities.Store.Answers" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Answers_DichotomyAnswer" EntityType="CheckIt.Entities.Store.Answers_DichotomyAnswer" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Items_DichotomyItem" EntityType="CheckIt.Entities.Store.Items_DichotomyItem" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="ChecklistKeyword" EntityType="CheckIt.Entities.Store.ChecklistKeyword" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="SectionKeyword" EntityType="CheckIt.Entities.Store.SectionKeyword" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="ItemKeyword" EntityType="CheckIt.Entities.Store.ItemKeyword" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="KeywordKeyword" EntityType="CheckIt.Entities.Store.KeywordKeyword" store:Type="Tables" Schema="checkIt" />
+    <AssociationSet Name="AreaCategory" Association="CheckIt.Entities.Store.AreaCategory">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="Category" EntitySet="Categorys" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryCategory" Association="CheckIt.Entities.Store.CategoryCategory">
+      <End Role="Category" EntitySet="Categorys" />
+      <End Role="Category1" EntitySet="Categorys" />
+    </AssociationSet>
+    <AssociationSet Name="UserChecklist" Association="CheckIt.Entities.Store.UserChecklist">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Checklist" EntitySet="Checklists" />
+    </AssociationSet>
+    <AssociationSet Name="ChecklistShare" Association="CheckIt.Entities.Store.ChecklistShare">
+      <End Role="Checklist" EntitySet="Checklists" />
+      <End Role="Share" EntitySet="Shares" />
+    </AssociationSet>
+    <AssociationSet Name="UserShare" Association="CheckIt.Entities.Store.UserShare">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Share" EntitySet="Shares" />
+    </AssociationSet>
+    <AssociationSet Name="ChecklistSection" Association="CheckIt.Entities.Store.ChecklistSection">
+      <End Role="Checklist" EntitySet="Checklists" />
+      <End Role="Section" EntitySet="Sections" />
+    </AssociationSet>
+    <AssociationSet Name="SectionItem" Association="CheckIt.Entities.Store.SectionItem">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryChecklist" Association="CheckIt.Entities.Store.CategoryChecklist">
+      <End Role="Category" EntitySet="Categorys" />
+      <End Role="Checklist" EntitySet="Checklists" />
+    </AssociationSet>
+    <AssociationSet Name="AccountFolder" Association="CheckIt.Entities.Store.AccountFolder">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Folder" EntitySet="Folders" />
+    </AssociationSet>
+    <AssociationSet Name="FolderFolder" Association="CheckIt.Entities.Store.FolderFolder">
+      <End Role="Folder" EntitySet="Folders" />
+      <End Role="Folder1" EntitySet="Folders" />
+    </AssociationSet>
+    <AssociationSet Name="AccountFavorite" Association="CheckIt.Entities.Store.AccountFavorite">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Favorite" EntitySet="Favorites" />
+    </AssociationSet>
+    <AssociationSet Name="ChecklistFavorite" Association="CheckIt.Entities.Store.ChecklistFavorite">
+      <End Role="Checklist" EntitySet="Checklists" />
+      <End Role="Favorite" EntitySet="Favorites" />
+    </AssociationSet>
+    <AssociationSet Name="SectionFavorite" Association="CheckIt.Entities.Store.SectionFavorite">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="Favorite" EntitySet="Favorites" />
+    </AssociationSet>
+    <AssociationSet Name="ItemFavorite" Association="CheckIt.Entities.Store.ItemFavorite">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="Favorite" EntitySet="Favorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChecklistKeyword_Checklist" Association="CheckIt.Entities.Store.FK_ChecklistKeyword_Checklist">
+      <End Role="Checklist" EntitySet="Checklists" />
+      <End Role="ChecklistKeyword" EntitySet="ChecklistKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChecklistKeyword_Keyword" Association="CheckIt.Entities.Store.FK_ChecklistKeyword_Keyword">
+      <End Role="Keyword" EntitySet="Keywords" />
+      <End Role="ChecklistKeyword" EntitySet="ChecklistKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SectionKeyword_Section" Association="CheckIt.Entities.Store.FK_SectionKeyword_Section">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="SectionKeyword" EntitySet="SectionKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SectionKeyword_Keyword" Association="CheckIt.Entities.Store.FK_SectionKeyword_Keyword">
+      <End Role="Keyword" EntitySet="Keywords" />
+      <End Role="SectionKeyword" EntitySet="SectionKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemKeyword_Item" Association="CheckIt.Entities.Store.FK_ItemKeyword_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="ItemKeyword" EntitySet="ItemKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemKeyword_Keyword" Association="CheckIt.Entities.Store.FK_ItemKeyword_Keyword">
+      <End Role="Keyword" EntitySet="Keywords" />
+      <End Role="ItemKeyword" EntitySet="ItemKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="UserAccount" Association="CheckIt.Entities.Store.UserAccount">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KeywordKeyword_Keyword" Association="CheckIt.Entities.Store.FK_KeywordKeyword_Keyword">
+      <End Role="Keyword" EntitySet="Keywords" />
+      <End Role="KeywordKeyword" EntitySet="KeywordKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KeywordKeyword_Keyword1" Association="CheckIt.Entities.Store.FK_KeywordKeyword_Keyword1">
+      <End Role="Keyword1" EntitySet="Keywords" />
+      <End Role="KeywordKeyword" EntitySet="KeywordKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="ItemAnswer" Association="CheckIt.Entities.Store.ItemAnswer">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="UserAnswer" Association="CheckIt.Entities.Store.UserAnswer">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DichotomyAnswer_inherits_Answer" Association="CheckIt.Entities.Store.FK_DichotomyAnswer_inherits_Answer">
+      <End Role="Answer" EntitySet="Answers" />
+      <End Role="DichotomyAnswer" EntitySet="Answers_DichotomyAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DichotomyItem_inherits_Item" Association="CheckIt.Entities.Store.FK_DichotomyItem_inherits_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="DichotomyItem" EntitySet="Items_DichotomyItem" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Checklists">
+    <Key>
+      <PropertyRef Name="ChecklistId" />
+    </Key>
+    <Property Name="ChecklistId" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Reference1" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="Reference2" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="Hints" Type="bigint" Nullable="false" DefaultValue="0" />
+    <Property Name="Rating" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="Language" Type="nvarchar" Nullable="false" DefaultValue="en" MaxLength="6" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Category_CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sections">
+    <Key>
+      <PropertyRef Name="SectionId" />
+    </Key>
+    <Property Name="SectionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Hints" Type="bigint" Nullable="false" DefaultValue="0" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Checklist_ChecklistId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Reference1" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Reference2" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Hints" Type="bigint" Nullable="false" DefaultValue="0" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Section_SectionId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Discriminator" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ocupation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Industry" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="DefaultLanguage" Type="nvarchar" Nullable="false" DefaultValue="en" MaxLength="6" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categorys">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Area_AreaId" Type="int" Nullable="false" />
+    <Property Name="SuperCategory_CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Keywords">
+    <Key>
+      <PropertyRef Name="KeywordId" />
+    </Key>
+    <Property Name="KeywordId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Word" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Language" Type="nvarchar" Nullable="false" DefaultValue="en" MaxLength="6" />
+    <Property Name="Hints" Type="bigint" Nullable="false" DefaultValue="0" />
+  </EntityType>
+  <EntityType Name="Favorites">
+    <Key>
+      <PropertyRef Name="FavoriteId" />
+    </Key>
+    <Property Name="FavoriteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Account_AccountId" Type="int" Nullable="false" />
+    <Property Name="Checklist_ChecklistId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="Section_SectionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Item_ItemId" Type="uniqueidentifier" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Areas">
+    <Key>
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="AreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Folders">
+    <Key>
+      <PropertyRef Name="FolderId" />
+    </Key>
+    <Property Name="FolderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Account_AccountId" Type="int" Nullable="false" />
+    <Property Name="ParentFolder_FolderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shares">
+    <Key>
+      <PropertyRef Name="ShareId" />
+    </Key>
+    <Property Name="ShareId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AccessLevel" Type="int" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Checklist_ChecklistId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Answers">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="Modified" Type="datetime" Nullable="false" />
+    <Property Name="Value" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Item_ItemId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Answers_DichotomyAnswer">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items_DichotomyItem">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChecklistKeyword">
+    <Key>
+      <PropertyRef Name="Checklists_ChecklistId" />
+      <PropertyRef Name="Keywords_KeywordId" />
+    </Key>
+    <Property Name="Checklists_ChecklistId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Keywords_KeywordId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SectionKeyword">
+    <Key>
+      <PropertyRef Name="Sections_SectionId" />
+      <PropertyRef Name="Keywords_KeywordId" />
+    </Key>
+    <Property Name="Sections_SectionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Keywords_KeywordId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemKeyword">
+    <Key>
+      <PropertyRef Name="Items_ItemId" />
+      <PropertyRef Name="Keywords_KeywordId" />
+    </Key>
+    <Property Name="Items_ItemId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Keywords_KeywordId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KeywordKeyword">
+    <Key>
+      <PropertyRef Name="ReferencedKeywords_KeywordId" />
+      <PropertyRef Name="RelatedKeywords_KeywordId" />
+    </Key>
+    <Property Name="ReferencedKeywords_KeywordId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RelatedKeywords_KeywordId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="AreaCategory">
+    <End Role="Area" Type="CheckIt.Entities.Store.Areas" Multiplicity="1" />
+    <End Role="Category" Type="CheckIt.Entities.Store.Categorys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="AreaId" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="Area_AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryCategory">
+    <End Role="Category" Type="CheckIt.Entities.Store.Categorys" Multiplicity="1" />
+    <End Role="Category1" Type="CheckIt.Entities.Store.Categorys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Category1">
+        <PropertyRef Name="SuperCategory_CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChecklist">
+    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
+    <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Checklist">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChecklistShare">
+    <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="1" />
+    <End Role="Share" Type="CheckIt.Entities.Store.Shares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Checklist">
+        <PropertyRef Name="ChecklistId" />
+      </Principal>
+      <Dependent Role="Share">
+        <PropertyRef Name="Checklist_ChecklistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserShare">
+    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
+    <End Role="Share" Type="CheckIt.Entities.Store.Shares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Share">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChecklistSection">
+    <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="1" />
+    <End Role="Section" Type="CheckIt.Entities.Store.Sections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Checklist">
+        <PropertyRef Name="ChecklistId" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="Checklist_ChecklistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SectionItem">
+    <End Role="Section" Type="CheckIt.Entities.Store.Sections" Multiplicity="1" />
+    <End Role="Item" Type="CheckIt.Entities.Store.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="Section_SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryChecklist">
+    <End Role="Category" Type="CheckIt.Entities.Store.Categorys" Multiplicity="1" />
+    <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Checklist">
+        <PropertyRef Name="Category_CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountFolder">
+    <End Role="Account" Type="CheckIt.Entities.Store.Accounts" Multiplicity="1" />
+    <End Role="Folder" Type="CheckIt.Entities.Store.Folders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="Folder">
+        <PropertyRef Name="Account_AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FolderFolder">
+    <End Role="Folder" Type="CheckIt.Entities.Store.Folders" Multiplicity="1" />
+    <End Role="Folder1" Type="CheckIt.Entities.Store.Folders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folder">
+        <PropertyRef Name="FolderId" />
+      </Principal>
+      <Dependent Role="Folder1">
+        <PropertyRef Name="ParentFolder_FolderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountFavorite">
+    <End Role="Account" Type="CheckIt.Entities.Store.Accounts" Multiplicity="1" />
+    <End Role="Favorite" Type="CheckIt.Entities.Store.Favorites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="Favorite">
+        <PropertyRef Name="Account_AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChecklistFavorite">
+    <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="0..1" />
+    <End Role="Favorite" Type="CheckIt.Entities.Store.Favorites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Checklist">
+        <PropertyRef Name="ChecklistId" />
+      </Principal>
+      <Dependent Role="Favorite">
+        <PropertyRef Name="Checklist_ChecklistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SectionFavorite">
+    <End Role="Section" Type="CheckIt.Entities.Store.Sections" Multiplicity="1" />
+    <End Role="Favorite" Type="CheckIt.Entities.Store.Favorites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="Favorite">
+        <PropertyRef Name="Section_SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemFavorite">
+    <End Role="Item" Type="CheckIt.Entities.Store.Items" Multiplicity="0..1" />
+    <End Role="Favorite" Type="CheckIt.Entities.Store.Favorites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="Favorite">
+        <PropertyRef Name="Item_ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAccount">
+    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
+    <End Role="Account" Type="CheckIt.Entities.Store.Accounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemAnswer">
+    <End Role="Item" Type="CheckIt.Entities.Store.Items" Multiplicity="1" />
+    <End Role="Answer" Type="CheckIt.Entities.Store.Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="Item_ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAnswer">
+    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
+    <End Role="Answer" Type="CheckIt.Entities.Store.Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChecklistKeyword_Checklist">
+    <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="1" />
+    <End Role="ChecklistKeyword" Type="CheckIt.Entities.Store.ChecklistKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Checklist">
+        <PropertyRef Name="ChecklistId" />
+      </Principal>
+      <Dependent Role="ChecklistKeyword">
+        <PropertyRef Name="Checklists_ChecklistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChecklistKeyword_Keyword">
+    <End Role="ChecklistKeyword" Type="CheckIt.Entities.Store.ChecklistKeyword" Multiplicity="*" />
+    <End Role="Keyword" Type="CheckIt.Entities.Store.Keywords" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword">
+        <PropertyRef Name="KeywordId" />
+      </Principal>
+      <Dependent Role="ChecklistKeyword">
+        <PropertyRef Name="Keywords_KeywordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SectionKeyword_Section">
+    <End Role="Section" Type="CheckIt.Entities.Store.Sections" Multiplicity="1" />
+    <End Role="SectionKeyword" Type="CheckIt.Entities.Store.SectionKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="SectionKeyword">
+        <PropertyRef Name="Sections_SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SectionKeyword_Keyword">
+    <End Role="SectionKeyword" Type="CheckIt.Entities.Store.SectionKeyword" Multiplicity="*" />
+    <End Role="Keyword" Type="CheckIt.Entities.Store.Keywords" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword">
+        <PropertyRef Name="KeywordId" />
+      </Principal>
+      <Dependent Role="SectionKeyword">
+        <PropertyRef Name="Keywords_KeywordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemKeyword_Item">
+    <End Role="Item" Type="CheckIt.Entities.Store.Items" Multiplicity="1" />
+    <End Role="ItemKeyword" Type="CheckIt.Entities.Store.ItemKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="ItemKeyword">
+        <PropertyRef Name="Items_ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemKeyword_Keyword">
+    <End Role="ItemKeyword" Type="CheckIt.Entities.Store.ItemKeyword" Multiplicity="*" />
+    <End Role="Keyword" Type="CheckIt.Entities.Store.Keywords" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword">
+        <PropertyRef Name="KeywordId" />
+      </Principal>
+      <Dependent Role="ItemKeyword">
+        <PropertyRef Name="Keywords_KeywordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KeywordKeyword_Keyword">
+    <End Role="Keyword" Type="CheckIt.Entities.Store.Keywords" Multiplicity="1" />
+    <End Role="KeywordKeyword" Type="CheckIt.Entities.Store.KeywordKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword">
+        <PropertyRef Name="KeywordId" />
+      </Principal>
+      <Dependent Role="KeywordKeyword">
+        <PropertyRef Name="ReferencedKeywords_KeywordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KeywordKeyword_Keyword1">
+    <End Role="KeywordKeyword" Type="CheckIt.Entities.Store.KeywordKeyword" Multiplicity="*" />
+    <End Role="Keyword1" Type="CheckIt.Entities.Store.Keywords" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword1">
+        <PropertyRef Name="KeywordId" />
+      </Principal>
+      <Dependent Role="KeywordKeyword">
+        <PropertyRef Name="RelatedKeywords_KeywordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DichotomyAnswer_inherits_Answer">
+    <End Role="Answer" Type="CheckIt.Entities.Store.Answers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DichotomyAnswer" Type="CheckIt.Entities.Store.Answers_DichotomyAnswer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Answer">
+        <PropertyRef Name="AnswerId" />
+      </Principal>
+      <Dependent Role="DichotomyAnswer">
+        <PropertyRef Name="AnswerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DichotomyItem_inherits_Item">
+    <End Role="Item" Type="CheckIt.Entities.Store.Items" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DichotomyItem" Type="CheckIt.Entities.Store.Items_DichotomyItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="DichotomyItem">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CheckIt.Entities" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="CheckItContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Checklists" EntityType="CheckIt.Entities.Checklist" />
+          <EntitySet Name="Sections" EntityType="CheckIt.Entities.Section" />
+          <EntitySet Name="Items" EntityType="CheckIt.Entities.Item" />
+          <EntitySet Name="Users" EntityType="CheckIt.Entities.User" />
+          <EntitySet Name="Accounts" EntityType="CheckIt.Entities.Account" />
+          <EntitySet Name="Categorys" EntityType="CheckIt.Entities.Category" />
+          <EntitySet Name="Keywords" EntityType="CheckIt.Entities.Keyword" />
+          <EntitySet Name="Favorites" EntityType="CheckIt.Entities.Favorite" />
+          <EntitySet Name="Areas" EntityType="CheckIt.Entities.Area" />
+          <EntitySet Name="Folders" EntityType="CheckIt.Entities.Folder" />
+          <AssociationSet Name="AreaCategory" Association="CheckIt.Entities.AreaCategory">
+            <End Role="Area" EntitySet="Areas" />
+            <End Role="Category" EntitySet="Categorys" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryCategory" Association="CheckIt.Entities.CategoryCategory">
+            <End Role="Category" EntitySet="Categorys" />
+            <End Role="Category1" EntitySet="Categorys" />
+          </AssociationSet>
+          <AssociationSet Name="UserChecklist" Association="CheckIt.Entities.UserChecklist">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Checklist" EntitySet="Checklists" />
+          </AssociationSet>
+          <EntitySet Name="Shares" EntityType="CheckIt.Entities.Share" />
+          <AssociationSet Name="ChecklistShare" Association="CheckIt.Entities.ChecklistShare">
+            <End Role="Checklist" EntitySet="Checklists" />
+            <End Role="Share" EntitySet="Shares" />
+          </AssociationSet>
+          <AssociationSet Name="UserShare" Association="CheckIt.Entities.UserShare">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Share" EntitySet="Shares" />
+          </AssociationSet>
+          <AssociationSet Name="ChecklistSection" Association="CheckIt.Entities.ChecklistSection">
+            <End Role="Checklist" EntitySet="Checklists" />
+            <End Role="Section" EntitySet="Sections" />
+          </AssociationSet>
+          <AssociationSet Name="SectionItem" Association="CheckIt.Entities.SectionItem">
+            <End Role="Section" EntitySet="Sections" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryChecklist" Association="CheckIt.Entities.CategoryChecklist">
+            <End Role="Category" EntitySet="Categorys" />
+            <End Role="Checklist" EntitySet="Checklists" />
+          </AssociationSet>
+          <AssociationSet Name="AccountFolder" Association="CheckIt.Entities.AccountFolder">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Folder" EntitySet="Folders" />
+          </AssociationSet>
+          <AssociationSet Name="FolderFolder" Association="CheckIt.Entities.FolderFolder">
+            <End Role="Folder" EntitySet="Folders" />
+            <End Role="Folder1" EntitySet="Folders" />
+          </AssociationSet>
+          <AssociationSet Name="AccountFavorite" Association="CheckIt.Entities.AccountFavorite">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Favorite" EntitySet="Favorites" />
+          </AssociationSet>
+          <AssociationSet Name="ChecklistFavorite" Association="CheckIt.Entities.ChecklistFavorite">
+            <End Role="Checklist" EntitySet="Checklists" />
+            <End Role="Favorite" EntitySet="Favorites" />
+          </AssociationSet>
+          <AssociationSet Name="SectionFavorite" Association="CheckIt.Entities.SectionFavorite">
+            <End Role="Section" EntitySet="Sections" />
+            <End Role="Favorite" EntitySet="Favorites" />
+          </AssociationSet>
+          <AssociationSet Name="ItemFavorite" Association="CheckIt.Entities.ItemFavorite">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Favorite" EntitySet="Favorites" />
+          </AssociationSet>
+          <AssociationSet Name="ChecklistKeyword" Association="CheckIt.Entities.ChecklistKeyword">
+            <End Role="Checklist" EntitySet="Checklists" />
+            <End Role="Keyword" EntitySet="Keywords" />
+          </AssociationSet>
+          <AssociationSet Name="SectionKeyword" Association="CheckIt.Entities.SectionKeyword">
+            <End Role="Section" EntitySet="Sections" />
+            <End Role="Keyword" EntitySet="Keywords" />
+          </AssociationSet>
+          <AssociationSet Name="ItemKeyword" Association="CheckIt.Entities.ItemKeyword">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Keyword" EntitySet="Keywords" />
+          </AssociationSet>
+          <AssociationSet Name="UserAccount" Association="CheckIt.Entities.UserAccount">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="KeywordKeyword" Association="CheckIt.Entities.KeywordKeyword">
+            <End Role="Keyword" EntitySet="Keywords" />
+            <End Role="Keyword1" EntitySet="Keywords" />
+          </AssociationSet>
+          <EntitySet Name="Answers" EntityType="CheckIt.Entities.Answer" />
+          <AssociationSet Name="ItemAnswer" Association="CheckIt.Entities.ItemAnswer">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Answer" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="UserAnswer" Association="CheckIt.Entities.UserAnswer">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Answer" EntitySet="Answers" />
+          </AssociationSet>
+          <EntitySet Name="Countries" EntityType="CheckIt.Entities.Country" />
+          <AssociationSet Name="CountryAccount" Association="CheckIt.Entities.CountryAccount">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Checklist">
+          <Key>
+            <PropertyRef Name="ChecklistId" />
+          </Key>
+          <Property Name="ChecklistId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" />
+          <Property Name="Description" Type="String" >
+            <Documentation>
+              <Summary>Detailed description</Summary>
+              <LongDescription>A more detailed description of the checklist(this text may not be visible all time)</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="Reference1" Type="String" MaxLength="255" Nullable="true" />
+          <Property Name="Reference2" Type="String" MaxLength="255" Nullable="true" />
+          <Property Name="Hints" Type="Int64" Nullable="false" DefaultValue="0" >
+            <Documentation>
+              <Summary>How many times it was taken from others</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Rating" Type="Int16" Nullable="false" DefaultValue="0" />
+          <Property Name="Language" Type="String" Nullable="false" DefaultValue="en" MaxLength="6" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+          <Property Name="Modified" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserChecklist" FromRole="Checklist" ToRole="User" />
+          <NavigationProperty Name="Share" Relationship="CheckIt.Entities.ChecklistShare" FromRole="Checklist" ToRole="Share" />
+          <Property Name="Status" Type="CheckIt.Entities.ItemStatus" Nullable="false" />
+          <NavigationProperty Name="Sections" Relationship="CheckIt.Entities.ChecklistSection" FromRole="Checklist" ToRole="Section" />
+          <NavigationProperty Name="Category" Relationship="CheckIt.Entities.CategoryChecklist" FromRole="Checklist" ToRole="Category" />
+          <NavigationProperty Name="Keywords" Relationship="CheckIt.Entities.ChecklistKeyword" FromRole="Checklist" ToRole="Keyword" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="SectionId" />
+          </Key>
+          <Property Name="SectionId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="Description" Type="String" >
+            <Documentation>
+              <LongDescription>A more detailed description of the section(this text may not be visible all time)</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="Hints" Type="Int64" Nullable="false" DefaultValue="0" />
+          <Property Name="Status" Type="CheckIt.Entities.ItemStatus" Nullable="false" />
+          <NavigationProperty Name="Checklist" Relationship="CheckIt.Entities.ChecklistSection" FromRole="Section" ToRole="Checklist" />
+          <NavigationProperty Name="Items" Relationship="CheckIt.Entities.SectionItem" FromRole="Section" ToRole="Item" />
+          <NavigationProperty Name="Keywords" Relationship="CheckIt.Entities.SectionKeyword" FromRole="Section" ToRole="Keyword" />
+        </EntityType>
+        <EntityType Name="Item" Abstract="true">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Content" Type="String" Nullable="false">
+            <Documentation>
+              <Summary>The item´s main text</Summary>
+            </Documentation>
+          </Property>
+          <Property Name="Description" Type="String" >
+            <Documentation>
+              <Summary>Detailed description of the item</Summary>
+              <LongDescription>A more detailed description of the item (this text may not be visible all time)</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="Reference1" Type="String" />
+          <Property Name="Reference2" Type="String" />
+          <Property Name="Hints" Type="Int64" Nullable="false" DefaultValue="0" />
+          <Property Name="Status" Type="CheckIt.Entities.ItemStatus" Nullable="false" />
+          <NavigationProperty Name="Section" Relationship="CheckIt.Entities.SectionItem" FromRole="Item" ToRole="Section" />
+          <NavigationProperty Name="Keywords" Relationship="CheckIt.Entities.ItemKeyword" FromRole="Item" ToRole="Keyword" />
+          <Property Name="Type" Type="CheckIt.Entities.ItemType" Nullable="false" />
+          <NavigationProperty Name="Answers" Relationship="CheckIt.Entities.ItemAnswer" FromRole="Item" ToRole="Answer" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="128" />
+          <Property Name="PasswordHash" Type="String" Nullable="true" />
+          <Property Name="SecurityStamp" Type="String" Nullable="true" />
+          <Property Name="UserName" Type="String" Nullable="true" />
+          <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" />
+          <NavigationProperty Name="Checklists" Relationship="CheckIt.Entities.UserChecklist" FromRole="User" ToRole="Checklist" />
+          <NavigationProperty Name="Share" Relationship="CheckIt.Entities.UserShare" FromRole="User" ToRole="Share" />
+          <NavigationProperty Name="Account" Relationship="CheckIt.Entities.UserAccount" FromRole="User" ToRole="Account" />
+          <NavigationProperty Name="Answers" Relationship="CheckIt.Entities.UserAnswer" FromRole="User" ToRole="Answer" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="Ocupation" Type="String" Nullable="false" />
+          <Property Name="Industry" Type="String" Nullable="false" />
+          <Property Name="Status" Type="CheckIt.Entities.AccountStatus" Nullable="false" />
+          <NavigationProperty Name="Folders" Relationship="CheckIt.Entities.AccountFolder" FromRole="Account" ToRole="Folder" />
+          <NavigationProperty Name="Favorites" Relationship="CheckIt.Entities.AccountFavorite" FromRole="Account" ToRole="Favorite" />
+          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserAccount" FromRole="Account" ToRole="User" />
+          <Property Name="DefaultLanguage" Type="String" Nullable="false" MaxLength="6" DefaultValue="en" />
+          <NavigationProperty Name="Country" Relationship="CheckIt.Entities.CountryAccount" FromRole="Account" ToRole="Country" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Documentation>
+            <Summary>Covered categories within an area</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="Description" Type="String" >
+            <Documentation>
+              <LongDescription>A more detailed description of the category(this text may not be visible all time)</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Area" Relationship="CheckIt.Entities.AreaCategory" FromRole="Category" ToRole="Area" />
+          <NavigationProperty Name="SubCategories" Relationship="CheckIt.Entities.CategoryCategory" FromRole="Category" ToRole="Category1" />
+          <NavigationProperty Name="SuperCategory" Relationship="CheckIt.Entities.CategoryCategory" FromRole="Category1" ToRole="Category" />
+          <NavigationProperty Name="Checklists" Relationship="CheckIt.Entities.CategoryChecklist" FromRole="Category" ToRole="Checklist" />
+        </EntityType>
+        <EntityType Name="Keyword">
+          <Key>
+            <PropertyRef Name="KeywordId" />
+          </Key>
+          <Property Name="KeywordId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Word" Type="String" Nullable="false" MaxLength="30" />
+          <Property Name="Language" Type="String" Nullable="false" MaxLength="6" DefaultValue="en" />
+          <Property Name="Hints" Type="Int64" Nullable="false" DefaultValue="0" >
+            <Documentation>
+              <Summary>How many times it was used to find a checklist, section or item</Summary>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Checklists" Relationship="CheckIt.Entities.ChecklistKeyword" FromRole="Keyword" ToRole="Checklist" />
+          <NavigationProperty Name="Sections" Relationship="CheckIt.Entities.SectionKeyword" FromRole="Keyword" ToRole="Section" />
+          <NavigationProperty Name="Items" Relationship="CheckIt.Entities.ItemKeyword" FromRole="Keyword" ToRole="Item" />
+          <NavigationProperty Name="RelatedKeywords" Relationship="CheckIt.Entities.KeywordKeyword" FromRole="Keyword" ToRole="Keyword1" />
+          <NavigationProperty Name="ReferencedKeywords" Relationship="CheckIt.Entities.KeywordKeyword" FromRole="Keyword1" ToRole="Keyword" />
+        </EntityType>
+        <EntityType Name="Favorite">
+          <Key>
+            <PropertyRef Name="FavoriteId" />
+          </Key>
+          <Property Name="FavoriteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="CheckIt.Entities.AccountFavorite" FromRole="Favorite" ToRole="Account" />
+          <NavigationProperty Name="Checklist" Relationship="CheckIt.Entities.ChecklistFavorite" FromRole="Favorite" ToRole="Checklist" />
+          <NavigationProperty Name="Section" Relationship="CheckIt.Entities.SectionFavorite" FromRole="Favorite" ToRole="Section" />
+          <NavigationProperty Name="Item" Relationship="CheckIt.Entities.ItemFavorite" FromRole="Favorite" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Documentation>
+            <Summary>Main covered areas. Initial scope cover just IT</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="Description" Type="String" >
+            <Documentation>
+              <LongDescription>A more detailed description of the area (this text may not be visible all time)</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Categories" Relationship="CheckIt.Entities.AreaCategory" FromRole="Area" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="Folder">
+          <Key>
+            <PropertyRef Name="FolderId" />
+          </Key>
+          <Property Name="FolderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="60" />
+          <Property Name="Description" Type="String" />
+          <NavigationProperty Name="Account" Relationship="CheckIt.Entities.AccountFolder" FromRole="Folder" ToRole="Account" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="SubFolders" Relationship="CheckIt.Entities.FolderFolder" FromRole="Folder" ToRole="Folder1" />
+          <NavigationProperty Name="ParentFolder" Relationship="CheckIt.Entities.FolderFolder" FromRole="Folder1" ToRole="Folder" />
+        </EntityType>
+        <Association Name="AreaCategory">
+          <End Type="CheckIt.Entities.Area" Role="Area" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Category" Role="Category" Multiplicity="*" />
+        </Association>
+        <Association Name="CategoryCategory">
+          <End Type="CheckIt.Entities.Category" Role="Category" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Category" Role="Category1" Multiplicity="*" />
+        </Association>
+        <Association Name="UserChecklist">
+          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Share">
+          <Key>
+            <PropertyRef Name="ShareId" />
+          </Key>
+          <Property Name="ShareId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <NavigationProperty Name="Checklist" Relationship="CheckIt.Entities.ChecklistShare" FromRole="Share" ToRole="Checklist" />
+          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserShare" FromRole="Share" ToRole="User" />
+          <Property Name="AccessLevel" Type="CheckIt.Entities.AccessLevel" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="ChecklistShare">
+          <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Share" Role="Share" Multiplicity="*" />
+        </Association>
+        <Association Name="UserShare">
+          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Share" Role="Share" Multiplicity="*" />
+        </Association>
+        <EnumType Name="AccessLevel" IsFlags="true">
+          <Member Name="AllowView" />
+          <Member Name="AllowEdit" />
+          <Member Name="AllowUse" />
+        </EnumType>
+        <EnumType Name="ItemStatus">
+          <Member Name="Created" Value="0" />
+          <Member Name="Cheked" Value="1" />
+          <Member Name="Approved" Value="2" />
+          <Member Name="Dismissed" Value="3" />
+        </EnumType>
+        <Association Name="ChecklistSection">
+          <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Section" Role="Section" Multiplicity="*" />
+        </Association>
+        <Association Name="SectionItem">
+          <End Type="CheckIt.Entities.Section" Role="Section" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Item" Role="Item" Multiplicity="*" />
+        </Association>
+        <Association Name="CategoryChecklist">
+          <End Type="CheckIt.Entities.Category" Role="Category" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="*" />
+        </Association>
+        <EnumType Name="AccountStatus">
+          <Member Name="Created" />
+          <Member Name="Verified" />
+          <Member Name="Active" />
+          <Member Name="Suspended" />
+          <Member Name="Closed" />
+        </EnumType>
+        <Association Name="AccountFolder">
+          <End Type="CheckIt.Entities.Account" Role="Account" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Folder" Role="Folder" Multiplicity="*" />
+        </Association>
+        <Association Name="FolderFolder">
+          <End Type="CheckIt.Entities.Folder" Role="Folder" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Folder" Role="Folder1" Multiplicity="*" />
+        </Association>
+        <Association Name="AccountFavorite">
+          <End Type="CheckIt.Entities.Account" Role="Account" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Favorite" Role="Favorite" Multiplicity="*" />
+        </Association>
+        <Association Name="ChecklistFavorite">
+          <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="0..1" />
+          <End Type="CheckIt.Entities.Favorite" Role="Favorite" Multiplicity="*" />
+        </Association>
+        <Association Name="SectionFavorite">
+          <End Type="CheckIt.Entities.Section" Role="Section" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Favorite" Role="Favorite" Multiplicity="0..1" />
+        </Association>
+        <Association Name="ItemFavorite">
+          <End Type="CheckIt.Entities.Item" Role="Item" Multiplicity="0..1" />
+          <End Type="CheckIt.Entities.Favorite" Role="Favorite" Multiplicity="*" />
+        </Association>
+        <Association Name="ChecklistKeyword">
+          <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="*" />
+          <End Type="CheckIt.Entities.Keyword" Role="Keyword" Multiplicity="*" />
+        </Association>
+        <Association Name="SectionKeyword">
+          <End Type="CheckIt.Entities.Section" Role="Section" Multiplicity="*" />
+          <End Type="CheckIt.Entities.Keyword" Role="Keyword" Multiplicity="*" />
+        </Association>
+        <Association Name="ItemKeyword">
+          <End Type="CheckIt.Entities.Item" Role="Item" Multiplicity="*" />
+          <End Type="CheckIt.Entities.Keyword" Role="Keyword" Multiplicity="*" />
+        </Association>
+        <Association Name="UserAccount">
+          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Account" Role="Account" Multiplicity="0..1" />
+        </Association>
+        <EnumType Name="ItemType">
+          <Member Name="Dichotomous" />
+          <Member Name="Text" />
+        </EnumType>
+        <Association Name="KeywordKeyword">
+          <End Type="CheckIt.Entities.Keyword" Role="Keyword" Multiplicity="*" />
+          <End Type="CheckIt.Entities.Keyword" Role="Keyword1" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Answer" Abstract="true">
+          <Key>
+            <PropertyRef Name="AnswerId" />
+          </Key>
+          <Property Name="AnswerId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <NavigationProperty Name="Item" Relationship="CheckIt.Entities.ItemAnswer" FromRole="Answer" ToRole="Item" />
+          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserAnswer" FromRole="Answer" ToRole="User" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+          <Property Name="Modified" Type="DateTime" Nullable="false" />
+          <Property Name="Value" Type="Binary" />
+        </EntityType>
+        <Association Name="ItemAnswer">
+          <End Type="CheckIt.Entities.Item" Role="Item" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Answer" Role="Answer" Multiplicity="*" />
+        </Association>
+        <Association Name="UserAnswer">
+          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Answer" Role="Answer" Multiplicity="*" />
+        </Association>
+        <EntityType Name="DichotomyAnswer" BaseType="CheckIt.Entities.Answer" />
+        <EntityType Name="DichotomyItem" BaseType="CheckIt.Entities.Item" />
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="ShortName" Type="String" Nullable="false" />
+          <Property Name="LongName" Type="String" Nullable="false" />
+          <Property Name="Iso2" Type="String" Nullable="false" />
+          <Property Name="Iso3" Type="String" Nullable="false" />
+          <Property Name="NumCode" Type="String" Nullable="false" />
+          <Property Name="UNMember" Type="String" Nullable="false" />
+          <Property Name="CallingCode" Type="String" Nullable="false" />
+          <Property Name="Cctld" Type="String" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="CheckIt.Entities.CountryAccount" FromRole="Country" ToRole="Account" />
+        </EntityType>
+        <Association Name="CountryAccount">
+          <End Type="CheckIt.Entities.Country" Role="Country" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Account" Role="Account" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CheckItEntitiesStoreContainer" CdmEntityContainer="CheckItContext">
+    <EntitySetMapping Name="Checklists">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Checklist)">
+        <MappingFragment StoreEntitySet="Checklists">
+          <ScalarProperty Name="ChecklistId" ColumnName="ChecklistId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Reference1" ColumnName="Reference1" />
+          <ScalarProperty Name="Reference2" ColumnName="Reference2" />
+          <ScalarProperty Name="Hints" ColumnName="Hints" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sections">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Section)">
+        <MappingFragment StoreEntitySet="Sections">
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Hints" ColumnName="Hints" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Item)">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Reference1" ColumnName="Reference1" />
+          <ScalarProperty Name="Reference2" ColumnName="Reference2" />
+          <ScalarProperty Name="Hints" ColumnName="Hints" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.DichotomyItem)">
+        <MappingFragment StoreEntitySet="Items_DichotomyItem">
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Account)">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Ocupation" ColumnName="Ocupation" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DefaultLanguage" ColumnName="DefaultLanguage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorys">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Category)">
+        <MappingFragment StoreEntitySet="Categorys">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Keywords">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Keyword)">
+        <MappingFragment StoreEntitySet="Keywords">
+          <ScalarProperty Name="KeywordId" ColumnName="KeywordId" />
+          <ScalarProperty Name="Word" ColumnName="Word" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Hints" ColumnName="Hints" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favorites">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Favorite)">
+        <MappingFragment StoreEntitySet="Favorites">
+          <ScalarProperty Name="FavoriteId" ColumnName="FavoriteId" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Area)">
+        <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Folders">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Folder)">
+        <MappingFragment StoreEntitySet="Folders">
+          <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shares">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Share)">
+        <MappingFragment StoreEntitySet="Shares">
+          <ScalarProperty Name="ShareId" ColumnName="ShareId" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Answer)">
+        <MappingFragment StoreEntitySet="Answers">
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.DichotomyAnswer)">
+        <MappingFragment StoreEntitySet="Answers_DichotomyAnswer">
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AreaCategory" TypeName="CheckIt.Entities.AreaCategory" StoreEntitySet="Categorys">
+      <EndProperty Name="Area">
+        <ScalarProperty Name="AreaId" ColumnName="Area_AreaId" />
+      </EndProperty>
+      <EndProperty Name="Category">
+        <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoryCategory" TypeName="CheckIt.Entities.CategoryCategory" StoreEntitySet="Categorys">
+      <EndProperty Name="Category">
+        <ScalarProperty Name="CategoryId" ColumnName="SuperCategory_CategoryId" />
+      </EndProperty>
+      <EndProperty Name="Category1">
+        <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserChecklist" TypeName="CheckIt.Entities.UserChecklist" StoreEntitySet="Checklists">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Checklist">
+        <ScalarProperty Name="ChecklistId" ColumnName="ChecklistId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ChecklistShare" TypeName="CheckIt.Entities.ChecklistShare" StoreEntitySet="Shares">
+      <EndProperty Name="Checklist">
+        <ScalarProperty Name="ChecklistId" ColumnName="Checklist_ChecklistId" />
+      </EndProperty>
+      <EndProperty Name="Share">
+        <ScalarProperty Name="ShareId" ColumnName="ShareId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserShare" TypeName="CheckIt.Entities.UserShare" StoreEntitySet="Shares">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Share">
+        <ScalarProperty Name="ShareId" ColumnName="ShareId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ChecklistSection" TypeName="CheckIt.Entities.ChecklistSection" StoreEntitySet="Sections">
+      <EndProperty Name="Checklist">
+        <ScalarProperty Name="ChecklistId" ColumnName="Checklist_ChecklistId" />
+      </EndProperty>
+      <EndProperty Name="Section">
+        <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SectionItem" TypeName="CheckIt.Entities.SectionItem" StoreEntitySet="Items">
+      <EndProperty Name="Section">
+        <ScalarProperty Name="SectionId" ColumnName="Section_SectionId" />
+      </EndProperty>
+      <EndProperty Name="Item">
+        <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoryChecklist" TypeName="CheckIt.Entities.CategoryChecklist" StoreEntitySet="Checklists">
+      <EndProperty Name="Category">
+        <ScalarProperty Name="CategoryId" ColumnName="Category_CategoryId" />
+      </EndProperty>
+      <EndProperty Name="Checklist">
+        <ScalarProperty Name="ChecklistId" ColumnName="ChecklistId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AccountFolder" TypeName="CheckIt.Entities.AccountFolder" StoreEntitySet="Folders">
+      <EndProperty Name="Account">
+        <ScalarProperty Name="AccountId" ColumnName="Account_AccountId" />
+      </EndProperty>
+      <EndProperty Name="Folder">
+        <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FolderFolder" TypeName="CheckIt.Entities.FolderFolder" StoreEntitySet="Folders">
+      <EndProperty Name="Folder">
+        <ScalarProperty Name="FolderId" ColumnName="ParentFolder_FolderId" />
+      </EndProperty>
+      <EndProperty Name="Folder1">
+        <ScalarProperty Name="FolderId" ColumnName="FolderId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AccountFavorite" TypeName="CheckIt.Entities.AccountFavorite" StoreEntitySet="Favorites">
+      <EndProperty Name="Account">
+        <ScalarProperty Name="AccountId" ColumnName="Account_AccountId" />
+      </EndProperty>
+      <EndProperty Name="Favorite">
+        <ScalarProperty Name="FavoriteId" ColumnName="FavoriteId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ChecklistFavorite" TypeName="CheckIt.Entities.ChecklistFavorite" StoreEntitySet="Favorites">
+      <EndProperty Name="Checklist">
+        <ScalarProperty Name="ChecklistId" ColumnName="Checklist_ChecklistId" />
+      </EndProperty>
+      <EndProperty Name="Favorite">
+        <ScalarProperty Name="FavoriteId" ColumnName="FavoriteId" />
+      </EndProperty>
+      <Condition ColumnName="Checklist_ChecklistId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SectionFavorite" TypeName="CheckIt.Entities.SectionFavorite" StoreEntitySet="Favorites">
+      <EndProperty Name="Section">
+        <ScalarProperty Name="SectionId" ColumnName="Section_SectionId" />
+      </EndProperty>
+      <EndProperty Name="Favorite">
+        <ScalarProperty Name="FavoriteId" ColumnName="FavoriteId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ItemFavorite" TypeName="CheckIt.Entities.ItemFavorite" StoreEntitySet="Favorites">
+      <EndProperty Name="Item">
+        <ScalarProperty Name="ItemId" ColumnName="Item_ItemId" />
+      </EndProperty>
+      <EndProperty Name="Favorite">
+        <ScalarProperty Name="FavoriteId" ColumnName="FavoriteId" />
+      </EndProperty>
+      <Condition ColumnName="Item_ItemId" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ChecklistKeyword" TypeName="CheckIt.Entities.ChecklistKeyword" StoreEntitySet="ChecklistKeyword">
+      <EndProperty Name="Checklist">
+        <ScalarProperty Name="ChecklistId" ColumnName="Checklists_ChecklistId" />
+      </EndProperty>
+      <EndProperty Name="Keyword">
+        <ScalarProperty Name="KeywordId" ColumnName="Keywords_KeywordId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SectionKeyword" TypeName="CheckIt.Entities.SectionKeyword" StoreEntitySet="SectionKeyword">
+      <EndProperty Name="Section">
+        <ScalarProperty Name="SectionId" ColumnName="Sections_SectionId" />
+      </EndProperty>
+      <EndProperty Name="Keyword">
+        <ScalarProperty Name="KeywordId" ColumnName="Keywords_KeywordId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ItemKeyword" TypeName="CheckIt.Entities.ItemKeyword" StoreEntitySet="ItemKeyword">
+      <EndProperty Name="Item">
+        <ScalarProperty Name="ItemId" ColumnName="Items_ItemId" />
+      </EndProperty>
+      <EndProperty Name="Keyword">
+        <ScalarProperty Name="KeywordId" ColumnName="Keywords_KeywordId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserAccount" TypeName="CheckIt.Entities.UserAccount" StoreEntitySet="Accounts">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Account">
+        <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="KeywordKeyword" TypeName="CheckIt.Entities.KeywordKeyword" StoreEntitySet="KeywordKeyword">
+      <EndProperty Name="Keyword">
+        <ScalarProperty Name="KeywordId" ColumnName="ReferencedKeywords_KeywordId" />
+      </EndProperty>
+      <EndProperty Name="Keyword1">
+        <ScalarProperty Name="KeywordId" ColumnName="RelatedKeywords_KeywordId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ItemAnswer" TypeName="CheckIt.Entities.ItemAnswer" StoreEntitySet="Answers">
+      <EndProperty Name="Item">
+        <ScalarProperty Name="ItemId" ColumnName="Item_ItemId" />
+      </EndProperty>
+      <EndProperty Name="Answer">
+        <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserAnswer" TypeName="CheckIt.Entities.UserAnswer" StoreEntitySet="Answers">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Answer">
+        <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="checkIt" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

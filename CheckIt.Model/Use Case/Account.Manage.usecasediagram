@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f4c6e452-5094-451d-bc53-5281fe945309" name="Account.Manage" linkedPackageId="cd0d9545-da35-49ca-864d-96e0fe1f5dd2" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a7921c03-d7bd-42c5-9ac3-d84992ac0dc3" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d8516ec-35fa-4f93-9c84-435bad6ec5ba" />
+        <targetEnds>
+          <association Id="69853096-1c61-44b7-8495-a7ed62395163" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Create Account" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e3e32d8f-ad1c-484a-8d52-89381da0f752" LastKnownName="Create Account" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bf7fecfc-924b-4552-81cb-8d3cb044ee1a" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6938a77d-91b6-4e72-8c74-61c2b0fd47a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ede54eec-56a3-4eee-939e-6d598d891e9e" name="Create Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8f489fa3-abe4-48e7-8155-7384e5005733" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="555321c5-7a9a-40a1-a375-546ef0e5062d" />
+          </association>
+          <association Id="4ec128d3-315b-499d-8915-7596a52deb0e" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Login" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="08635b5d-5502-4213-901c-2773e3e50d5e" LastKnownName="Login" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0261173-41a0-4752-8d50-05ef301a451a" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="de58d6cb-47fc-4c7f-888c-69205a992877" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2b9b0220-b4ba-496e-aa19-c8b7b2b98889" name="Login" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="33b79bfc-3db8-4e9b-a726-da12382b8511" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="135904c2-dc29-4a0d-8105-184f1ebc64e7" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="a738019a-3050-482f-a642-a8527cccefee" name="LoggedInUser" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="68c0194e-8f47-4da0-b1da-c92595f4b901" />
+        <generalsInternal>
+          <generalization Id="6e88a4c3-1e1e-4927-abd0-0e0dca0f4f70" isSubstitutable="false">
+            <actorMoniker Id="a7921c03-d7bd-42c5-9ac3-d84992ac0dc3" LastKnownName="User" />
+            <elementDefinition Id="a54b5251-d6d7-41f4-bc0a-a62db018f041" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="f8f738f0-72d7-4b7f-a449-e0a2c4700c73" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Manage Account" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="10b6c519-d188-489e-be00-7a2872840789" LastKnownName="Manage Account" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="41133c9e-d884-4bfc-9294-ddbfba14f772" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8c4c8244-d20e-4197-a911-4a583a205806" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="230fb698-5881-40ed-91bd-ee80e8a5f40e" name="Manage Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="87d5d8a8-93dd-4d3b-b8fe-d01c8246f402" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9936c6ad-00a7-415d-9f53-f289d53d4fd4" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="f2612648-d192-4f7d-a2de-78c5d1bafe3a" name="CheckIt.Web.Account" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="25630ba9-dfaf-4c42-81cd-ecf9106fd847" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="e3e32d8f-ad1c-484a-8d52-89381da0f752" name="Create Account" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b98f4a9f-1e30-469d-bbd0-44fab12c76dd" />
+        <additions>
+          <include Id="32de767b-d18a-42fb-92a0-746b8ceb4c8c">
+            <useCaseMoniker Id="ad4577c0-7105-44f5-bca6-d46990cda938" LastKnownName="Accept Conditions" />
+            <elementDefinition Id="f523be47-95a9-4da5-b426-a055fb834596" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="f2612648-d192-4f7d-a2de-78c5d1bafe3a" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="08635b5d-5502-4213-901c-2773e3e50d5e" name="Login" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="da0b733d-5084-45d8-83b7-0acdfd330531" />
+        <subjects>
+          <subsystemMoniker Id="f2612648-d192-4f7d-a2de-78c5d1bafe3a" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="ad4577c0-7105-44f5-bca6-d46990cda938" name="Accept Conditions" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="659cb2f7-48e6-4145-bc1f-c1ac16ae4b3d" />
+        <subjects>
+          <subsystemMoniker Id="f2612648-d192-4f7d-a2de-78c5d1bafe3a" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="10b6c519-d188-489e-be00-7a2872840789" name="Manage Account" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9e34fcf9-914d-4a0a-bc97-e5bd53dd2135" />
+        <extendedCases>
+          <extend Id="bd30f8e7-d6c3-4f85-9dc7-a79b57565a19">
+            <useCaseMoniker Id="0409d8db-682f-4f6a-adb8-4fe09aebf19f" LastKnownName="Close Account" />
+            <elementDefinition Id="dd8ad734-bf4f-4156-9439-3dd3cdc7c414" />
+          </extend>
+          <extend Id="1808c5d8-77f0-40e0-b579-45056811f241">
+            <useCaseMoniker Id="9fac6152-91e6-4f4a-8533-b756a781d901" LastKnownName="Manage Profile" />
+            <elementDefinition Id="43d054af-864d-4780-a865-d56c2605cbcc" />
+          </extend>
+          <extend Id="01386c4d-830f-47e5-a40c-0c3e7660932d">
+            <useCaseMoniker Id="54024a39-f8dc-448f-a2dc-d03b422871f4" LastKnownName="Manage Checklists" />
+            <elementDefinition Id="31edc8cf-7bec-4ecd-84dc-9464ca908ccb" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="f2612648-d192-4f7d-a2de-78c5d1bafe3a" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="0409d8db-682f-4f6a-adb8-4fe09aebf19f" name="Close Account" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="58e9f210-dac3-492f-8e61-cd41e8241157" />
+        <subjects>
+          <subsystemMoniker Id="f2612648-d192-4f7d-a2de-78c5d1bafe3a" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="9fac6152-91e6-4f4a-8533-b756a781d901" name="Manage Profile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="33d15c0c-7322-4d93-a7b2-f3aa0c276c1e" />
+        <subjects>
+          <subsystemMoniker Id="f2612648-d192-4f7d-a2de-78c5d1bafe3a" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="54024a39-f8dc-448f-a2dc-d03b422871f4" name="Manage Checklists" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1c1f8bf9-7419-4200-9865-3d657b0a52ca" />
+        <subjects>
+          <subsystemMoniker Id="f2612648-d192-4f7d-a2de-78c5d1bafe3a" LastKnownName="CheckIt.Web.Account" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="cd0d9545-da35-49ca-864d-96e0fe1f5dd2" name="CheckIt.Model">
+    <elementDefinition Id="92f782f7-87c8-4d2b-b644-030360ed0d5e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f01935a6-ee98-4096-985c-84875190a05e">
+        <profileInstance Id="e1fbc5a8-f6f8-4e3a-b96c-9444feea65d1" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="7c8e7210-d845-4b63-bdea-4bd7ef2ffae6">
+        <profileInstance Id="61f5f4fc-6dda-4f08-af33-b97726dd7a63" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

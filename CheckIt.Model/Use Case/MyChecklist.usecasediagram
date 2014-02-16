@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="e6eff2e6-b461-407f-b5b7-171e2c150b30" name="MyChecklist" linkedPackageId="cdcf6691-ecf2-4ae2-b48e-6772179cdb39" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="2b6aa51e-9441-414f-9695-0cc36665403c">
+      <elementDefinition Id="0390e6b2-6867-451d-bda8-2abc6c797995" />
+      <body>Export shall include at least PDF for print purpose</body>
+      <annotatedElements>
+        <useCaseMoniker Id="2a6429ff-4404-4339-b15e-db2c592c0905" LastKnownName="Export" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="136f1097-4a52-4772-9e34-50e7ce49d6f6" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d8516ec-35fa-4f93-9c84-435bad6ec5ba" />
+        <targetEnds>
+          <association Id="56b15798-8d30-4d67-bc32-88166d6af79d" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Create Section" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="cdd18e2c-0da0-4121-bbb8-48a269a8488f" LastKnownName="Create Section" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d76c23d6-e9a5-4bc1-b159-9b03886f6617" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2008dc19-c208-40ea-8ca3-da6fdd3649d1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7ac3e52a-95ab-483e-b579-29db094369d3" name="Create Section" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="448b3d1c-b573-407a-8f11-6839ff3b6aca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4a0a7b3b-dec4-4e07-b0f1-6779eda30d34" />
+          </association>
+          <association Id="10c3cf6c-295b-4476-9ea2-7ee92272f6ef" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Compose Topic" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9e63f9b7-642c-4a91-8d80-761937a8e304" LastKnownName="Compose Topic" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b22b3a27-fa2d-4775-9cc1-e7a533a4439c" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7009a0ee-1b1e-489d-9e34-9ea0553597c7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f66c6335-d58b-4039-8d13-b46c3e367552" name="Compose Topic" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cc32d978-44f5-4c2c-8b8f-9349240ff2f7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="66a2f33f-5a4b-4827-b2f4-ef59ca4c9b45" />
+          </association>
+          <association Id="fb0d2f0f-da7e-411c-b795-738218a96a5e" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Move Topic" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e175d3ac-986d-4d3c-b3d7-cf8b568533a7" LastKnownName="Move Topic" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fb6d72fc-587f-47a8-a278-dfe32d86357b" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e64aa454-5cd6-49ab-9355-70272b5f809e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4836a04e-4b9b-42bd-af58-96e06133eac7" name="Move Topic" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="759f2c03-ca82-4879-a5cf-440ba6a296f5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2182624b-bed1-4728-9852-182ea011b574" />
+          </association>
+          <association Id="a1ebd181-90a9-4c04-b2b7-14099711c264" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Remove Topic" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e9995931-5e84-4167-9bb8-18b092b7b6bd" LastKnownName="Remove Topic" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4f8c89b4-bb34-466c-b620-67748bf75d8d" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ca8ea129-4ea1-468a-a600-039e144c640b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a89005e3-f1b6-45aa-bc1a-50785e2bff6d" name="Remove Topic" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d4304484-738e-496f-8b2e-d9c633817b06" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="07013800-791b-45e7-9163-0481901fc4fe" />
+          </association>
+          <association Id="df635f53-e43a-411e-a0ba-85762ef3f69e" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Remove Section" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1c84c5f1-1cfd-4165-89a5-ffcce0d0c872" LastKnownName="Remove Section" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="814d5418-f699-44ec-bf6c-dd741b21cba4" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a07bffc9-b2a9-4004-80da-a7fdcbb4ea85" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="38175da0-4745-44c8-84ec-4c910bf92fdf" name="Remove Section" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="23f2d160-ba65-4d2e-a2a6-ce3edd5fa891" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5639fe89-8012-4713-963f-18ed567f6769" />
+          </association>
+          <association Id="b353d120-26bc-4721-9c2f-6389b683fafa" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Export" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2a6429ff-4404-4339-b15e-db2c592c0905" LastKnownName="Export" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8cd58afc-0a9b-45ec-bd4b-037b3fb832ea" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b5a955b3-9bc9-41ec-83f4-0a59562475ed" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aa1d71c0-37eb-4035-aeab-958c32505c3b" name="Export" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="aa0b38c7-3c56-432d-8cd5-96a1edabdc2f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f1607e07-c421-4a29-bac5-91787978daae" />
+          </association>
+          <association Id="4e70d07a-5a9f-43e6-8405-60ce9a9060de" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Change Title" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="baf77cfe-57ce-40a8-a1e0-d24628d75779" LastKnownName="Change Title" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bda0fb82-49dc-4c59-bd74-23369cd5763f" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5acdbf6e-d542-40a4-9a9f-e35adedc6118" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bfb4f407-1693-4a27-9907-e396453811f3" name="Change Title" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="41548a80-c5f0-4729-aec9-c9438699f9e6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="656553e9-37e1-4556-a5d7-25268fa6d2df" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="f06d91c7-b791-4404-aa89-9b7a99bb86c0" name="LoggedInUser" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="68c0194e-8f47-4da0-b1da-c92595f4b901" />
+        <generalsInternal>
+          <generalization Id="58516f0f-d620-4eba-8d94-e6563433e73c" isSubstitutable="false">
+            <actorMoniker Id="136f1097-4a52-4772-9e34-50e7ce49d6f6" LastKnownName="User" />
+            <elementDefinition Id="a54b5251-d6d7-41f4-bc0a-a62db018f041" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="d3c9aa4b-caab-4ef2-b70f-692cd6b031ce" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Share" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="631947b9-2a80-4fbd-96a2-53ec7e7fbffe" LastKnownName="Share" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="109c90bc-ff79-488f-a7d4-6daf6edeeae2" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="26f7b897-8242-45bf-8ba5-5412345b8e08" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f4d2c1a3-7ae6-4044-a976-868d2ea31732" name="Share" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e1ffb869-60a1-4c5d-8dbf-e39b216c3c69" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3bf4b059-d8e5-4c13-9cef-931812063b4c" />
+          </association>
+          <association Id="a96deb6d-3649-421b-8d48-80e5477219f6" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Not Share" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="83c6a7fb-2a4a-4741-b2f2-cd928f154d98" LastKnownName="Not Share" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="62eaef4d-518a-4b1c-a68c-6aaabea49695" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="442886f3-ff8d-43f9-983b-04c3e91ed417" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f83f5a26-c2d4-48de-aee1-1b5fe81fd99f" name="Not Share" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0fef52a9-1f43-43aa-a6e1-a25056c9d07a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="abb9710a-a424-47fd-949c-5d0de04e5f2a" />
+          </association>
+          <association Id="37ad6294-e4da-46a7-8f51-00ec44f58fc7" isDerived="false" sourceEndRoleName="LoggedInUser" targetEndRoleName="Save Checklist" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="533066bd-22e3-4fc9-8b8a-cb30361393fb" LastKnownName="Save Checklist" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="75080352-71f0-49a0-9da5-9401cd28cff1" name="LoggedInUser" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9b3a2ffa-7b18-40e7-8e0d-5500ff7d2720" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a003fc0f-17f5-485f-8ed3-0c0b35144748" name="Save Checklist" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a310ea88-30d4-4426-9abe-0f2a7e2d5792" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2c8a2bea-f9a7-416c-a6ec-1b1ffa78622c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" name="CheckIt.Web.MyChecklist" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e827fa4a-580c-481e-9b6f-205ac370ff5e" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="9e63f9b7-642c-4a91-8d80-761937a8e304" name="Compose Topic" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e8a2ca2c-264a-474b-b4cc-81824dac7710" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="cdd18e2c-0da0-4121-bbb8-48a269a8488f" name="Create Section" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0cd23526-e33c-4a41-9cb4-81348ed1c2de" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e175d3ac-986d-4d3c-b3d7-cf8b568533a7" name="Move Topic" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bd3441a5-2063-4163-bcda-143cc997f8dd" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e9995931-5e84-4167-9bb8-18b092b7b6bd" name="Remove Topic" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d72e934b-7332-4396-bb6c-5497a659cd68" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="1c84c5f1-1cfd-4165-89a5-ffcce0d0c872" name="Remove Section" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="49b7f7af-2700-4044-b001-1c301328e170" />
+        <additions>
+          <include Id="93f82833-537b-4f7a-a948-70ae3cc82fc5">
+            <useCaseMoniker Id="e9995931-5e84-4167-9bb8-18b092b7b6bd" LastKnownName="Remove Topic" />
+            <elementDefinition Id="0f54214f-ab09-4542-92de-2ddb69bc6313" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="533066bd-22e3-4fc9-8b8a-cb30361393fb" name="Save Checklist" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f0cac027-6f10-40d9-87f2-f450e6755dee" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="2a6429ff-4404-4339-b15e-db2c592c0905" name="Export" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="60e8c4f1-60cb-4283-9e58-b2eecd900c6c" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="631947b9-2a80-4fbd-96a2-53ec7e7fbffe" name="Share" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f0f5b2c3-d222-451b-a1f1-052139630079" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="83c6a7fb-2a4a-4741-b2f2-cd928f154d98" name="Not Share" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4bf31ac7-fb86-43d7-be6c-152c187f8d68" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="baf77cfe-57ce-40a8-a1e0-d24628d75779" name="Change Title" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1f6cc16c-8d4d-484a-95ae-1787b7cfd06d" />
+        <subjects>
+          <subsystemMoniker Id="9e70b849-1606-4c3e-ac9d-38c5f8bd4d32" LastKnownName="CheckIt.Web.MyChecklist" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="cdcf6691-ecf2-4ae2-b48e-6772179cdb39" name="CheckIt.Model">
+    <elementDefinition Id="92f782f7-87c8-4d2b-b644-030360ed0d5e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="26ef7454-9822-43eb-8877-a91bd62ab3b8">
+        <profileInstance Id="f1b27326-ef5e-4d4b-95b8-3ce9d94e0981" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="39847d83-e3c8-4172-8548-4c26f0404728">
+        <profileInstance Id="ba47c916-dcfa-4947-9cc3-2f9addd74098" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>
