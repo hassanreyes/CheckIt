@@ -19,7 +19,6 @@ namespace CheckIt.Entities
             this.Hints = 0;
             this.Rating = 0;
             this.Language = "en";
-            this.Share = new HashSet<Share>();
             this.Sections = new HashSet<Section>();
             this.Keywords = new HashSet<Keyword>();
         }
@@ -36,10 +35,9 @@ namespace CheckIt.Entities
         public System.DateTime Modified { get; set; }
         public ItemStatus Status { get; set; }
     
-        public virtual User User { get; set; }
-        public virtual ICollection<Share> Share { get; set; }
         public virtual ICollection<Section> Sections { get; set; }
         public virtual Category Category { get; set; }
         public virtual ICollection<Keyword> Keywords { get; set; }
+        public virtual User User { get; set; }
     }
 }

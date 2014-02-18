@@ -17,10 +17,8 @@
         <EntityTypeShape EntityType="CheckIt.Entities.Folder" Width="1.5" PointX="5.5" PointY="6.25" FillColor="192, 64, 0" />
         <AssociationConnector Association="CheckIt.Entities.AreaCategory" />
         <AssociationConnector Association="CheckIt.Entities.CategoryCategory" />
-        <AssociationConnector Association="CheckIt.Entities.UserChecklist" />
         <EntityTypeShape EntityType="CheckIt.Entities.Share" Width="1.5" PointX="8.25" PointY="5.25" FillColor="192, 64, 0" />
         <AssociationConnector Association="CheckIt.Entities.ChecklistShare" />
-        <AssociationConnector Association="CheckIt.Entities.UserShare" />
         <AssociationConnector Association="CheckIt.Entities.ChecklistSection" />
         <AssociationConnector Association="CheckIt.Entities.SectionItem" />
         <AssociationConnector Association="CheckIt.Entities.CategoryChecklist" />
@@ -33,17 +31,19 @@
         <AssociationConnector Association="CheckIt.Entities.ChecklistKeyword" />
         <AssociationConnector Association="CheckIt.Entities.SectionKeyword" />
         <AssociationConnector Association="CheckIt.Entities.ItemKeyword" />
-        <AssociationConnector Association="CheckIt.Entities.UserAccount" />
         <AssociationConnector Association="CheckIt.Entities.KeywordKeyword" />
         <EntityTypeShape EntityType="CheckIt.Entities.Answer" Width="1.5" PointX="8.625" PointY="8.5" FillColor="192, 64, 0" />
         <AssociationConnector Association="CheckIt.Entities.ItemAnswer" />
-        <AssociationConnector Association="CheckIt.Entities.UserAnswer" />
         <EntityTypeShape EntityType="CheckIt.Entities.DichotomyAnswer" Width="1.5" PointX="8.625" PointY="11.375" FillColor="192, 64, 0" />
         <InheritanceConnector EntityType="CheckIt.Entities.DichotomyAnswer" />
         <EntityTypeShape EntityType="CheckIt.Entities.DichotomyItem" Width="1.5" PointX="15" PointY="4.75" FillColor="Green" />
         <InheritanceConnector EntityType="CheckIt.Entities.DichotomyItem" />
         <EntityTypeShape EntityType="CheckIt.Entities.Country" Width="1.5" PointX="3.25" PointY="10" />
         <AssociationConnector Association="CheckIt.Entities.CountryAccount" />
+        <AssociationConnector Association="CheckIt.Entities.UserChecklist" />
+        <AssociationConnector Association="CheckIt.Entities.UserShare" />
+        <AssociationConnector Association="CheckIt.Entities.UserAccount" />
+        <AssociationConnector Association="CheckIt.Entities.UserAnswer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

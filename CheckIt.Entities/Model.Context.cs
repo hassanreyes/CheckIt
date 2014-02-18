@@ -28,7 +28,6 @@ namespace CheckIt.Entities
         public virtual DbSet<Checklist> Checklists { get; set; }
         public virtual DbSet<Section> Sections { get; set; }
         public virtual DbSet<Item> Items { get; set; }
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Category> Categorys { get; set; }
         public virtual DbSet<Keyword> Keywords { get; set; }
@@ -38,5 +37,6 @@ namespace CheckIt.Entities
         public virtual DbSet<Share> Shares { get; set; }
         public virtual DbSet<Answer> Answers { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

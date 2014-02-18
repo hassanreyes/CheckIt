@@ -6,24 +6,25 @@
     <edmx:StorageModels>
     <Schema Namespace="CheckIt.Entities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="CheckItEntitiesStoreContainer">
-    <EntitySet Name="Checklists" EntityType="CheckIt.Entities.Store.Checklists" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Sections" EntityType="CheckIt.Entities.Store.Sections" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Items" EntityType="CheckIt.Entities.Store.Items" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Users" EntityType="CheckIt.Entities.Store.Users" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Accounts" EntityType="CheckIt.Entities.Store.Accounts" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Categorys" EntityType="CheckIt.Entities.Store.Categorys" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Keywords" EntityType="CheckIt.Entities.Store.Keywords" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Favorites" EntityType="CheckIt.Entities.Store.Favorites" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Areas" EntityType="CheckIt.Entities.Store.Areas" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Folders" EntityType="CheckIt.Entities.Store.Folders" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Shares" EntityType="CheckIt.Entities.Store.Shares" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Answers" EntityType="CheckIt.Entities.Store.Answers" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Answers_DichotomyAnswer" EntityType="CheckIt.Entities.Store.Answers_DichotomyAnswer" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="Items_DichotomyItem" EntityType="CheckIt.Entities.Store.Items_DichotomyItem" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="ChecklistKeyword" EntityType="CheckIt.Entities.Store.ChecklistKeyword" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="SectionKeyword" EntityType="CheckIt.Entities.Store.SectionKeyword" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="ItemKeyword" EntityType="CheckIt.Entities.Store.ItemKeyword" store:Type="Tables" Schema="checkIt" />
-    <EntitySet Name="KeywordKeyword" EntityType="CheckIt.Entities.Store.KeywordKeyword" store:Type="Tables" Schema="checkIt" />
+    <EntitySet Name="Checklists" EntityType="CheckIt.Entities.Store.Checklists" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Sections" EntityType="CheckIt.Entities.Store.Sections" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Items" EntityType="CheckIt.Entities.Store.Items" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Accounts" EntityType="CheckIt.Entities.Store.Accounts" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Categorys" EntityType="CheckIt.Entities.Store.Categorys" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Keywords" EntityType="CheckIt.Entities.Store.Keywords" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Favorites" EntityType="CheckIt.Entities.Store.Favorites" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Areas" EntityType="CheckIt.Entities.Store.Areas" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Folders" EntityType="CheckIt.Entities.Store.Folders" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Shares" EntityType="CheckIt.Entities.Store.Shares" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Answers" EntityType="CheckIt.Entities.Store.Answers" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Countries" EntityType="CheckIt.Entities.Store.Countries" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Users" EntityType="CheckIt.Entities.Store.Users" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Answers_DichotomyAnswer" EntityType="CheckIt.Entities.Store.Answers_DichotomyAnswer" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="Items_DichotomyItem" EntityType="CheckIt.Entities.Store.Items_DichotomyItem" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="ChecklistKeyword" EntityType="CheckIt.Entities.Store.ChecklistKeyword" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="SectionKeyword" EntityType="CheckIt.Entities.Store.SectionKeyword" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="ItemKeyword" EntityType="CheckIt.Entities.Store.ItemKeyword" store:Type="Tables" Schema="CheckIt" />
+    <EntitySet Name="KeywordKeyword" EntityType="CheckIt.Entities.Store.KeywordKeyword" store:Type="Tables" Schema="CheckIt" />
     <AssociationSet Name="AreaCategory" Association="CheckIt.Entities.Store.AreaCategory">
       <End Role="Area" EntitySet="Areas" />
       <End Role="Category" EntitySet="Categorys" />
@@ -32,16 +33,8 @@
       <End Role="Category" EntitySet="Categorys" />
       <End Role="Category1" EntitySet="Categorys" />
     </AssociationSet>
-    <AssociationSet Name="UserChecklist" Association="CheckIt.Entities.Store.UserChecklist">
-      <End Role="User" EntitySet="Users" />
-      <End Role="Checklist" EntitySet="Checklists" />
-    </AssociationSet>
     <AssociationSet Name="ChecklistShare" Association="CheckIt.Entities.Store.ChecklistShare">
       <End Role="Checklist" EntitySet="Checklists" />
-      <End Role="Share" EntitySet="Shares" />
-    </AssociationSet>
-    <AssociationSet Name="UserShare" Association="CheckIt.Entities.Store.UserShare">
-      <End Role="User" EntitySet="Users" />
       <End Role="Share" EntitySet="Shares" />
     </AssociationSet>
     <AssociationSet Name="ChecklistSection" Association="CheckIt.Entities.Store.ChecklistSection">
@@ -104,10 +97,6 @@
       <End Role="Keyword" EntitySet="Keywords" />
       <End Role="ItemKeyword" EntitySet="ItemKeyword" />
     </AssociationSet>
-    <AssociationSet Name="UserAccount" Association="CheckIt.Entities.Store.UserAccount">
-      <End Role="User" EntitySet="Users" />
-      <End Role="Account" EntitySet="Accounts" />
-    </AssociationSet>
     <AssociationSet Name="FK_KeywordKeyword_Keyword" Association="CheckIt.Entities.Store.FK_KeywordKeyword_Keyword">
       <End Role="Keyword" EntitySet="Keywords" />
       <End Role="KeywordKeyword" EntitySet="KeywordKeyword" />
@@ -119,6 +108,22 @@
     <AssociationSet Name="ItemAnswer" Association="CheckIt.Entities.Store.ItemAnswer">
       <End Role="Item" EntitySet="Items" />
       <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="CountryAccount" Association="CheckIt.Entities.Store.CountryAccount">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="UserChecklist" Association="CheckIt.Entities.Store.UserChecklist">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Checklist" EntitySet="Checklists" />
+    </AssociationSet>
+    <AssociationSet Name="UserShare" Association="CheckIt.Entities.Store.UserShare">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Share" EntitySet="Shares" />
+    </AssociationSet>
+    <AssociationSet Name="UserAccount" Association="CheckIt.Entities.Store.UserAccount">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Account" EntitySet="Accounts" />
     </AssociationSet>
     <AssociationSet Name="UserAnswer" Association="CheckIt.Entities.Store.UserAnswer">
       <End Role="User" EntitySet="Users" />
@@ -148,8 +153,8 @@
     <Property Name="Created" Type="datetime" Nullable="false" />
     <Property Name="Modified" Type="datetime" Nullable="false" />
     <Property Name="Status" Type="int" Nullable="false" />
-    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Category_CategoryId" Type="int" Nullable="false" />
+    <Property Name="User_UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
   <EntityType Name="Sections">
     <Key>
@@ -167,6 +172,7 @@
       <PropertyRef Name="ItemId" />
     </Key>
     <Property Name="ItemId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Reference1" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Reference2" Type="nvarchar(max)" Nullable="true" />
@@ -174,16 +180,6 @@
     <Property Name="Status" Type="int" Nullable="false" />
     <Property Name="Type" Type="int" Nullable="false" />
     <Property Name="Section_SectionId" Type="uniqueidentifier" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Users">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="128" />
-    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="SecurityStamp" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="UserName" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Discriminator" Type="nvarchar" Nullable="false" MaxLength="128" />
   </EntityType>
   <EntityType Name="Accounts">
     <Key>
@@ -196,7 +192,8 @@
     <Property Name="Industry" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Status" Type="int" Nullable="false" />
     <Property Name="DefaultLanguage" Type="nvarchar" Nullable="false" DefaultValue="en" MaxLength="6" />
-    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Country_CountryId" Type="smallint" Nullable="false" />
+    <Property Name="User_UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
   <EntityType Name="Categorys">
     <Key>
@@ -255,7 +252,7 @@
     <Property Name="AccessLevel" Type="int" Nullable="false" />
     <Property Name="Created" Type="datetime" Nullable="false" />
     <Property Name="Checklist_ChecklistId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="User_UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
   <EntityType Name="Answers">
     <Key>
@@ -266,7 +263,28 @@
     <Property Name="Modified" Type="datetime" Nullable="false" />
     <Property Name="Value" Type="varbinary(max)" Nullable="true" />
     <Property Name="Item_ItemId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="User_UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LongName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Iso2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Iso3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UNMember" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CallingCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cctld" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" StoreGeneratedPattern="Identity" Nullable="false" MaxLength="128" />
   </EntityType>
   <EntityType Name="Answers_DichotomyAnswer">
     <Key>
@@ -336,18 +354,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="UserChecklist">
-    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
-    <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Checklist">
-        <PropertyRef Name="User_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ChecklistShare">
     <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="1" />
     <End Role="Share" Type="CheckIt.Entities.Store.Shares" Multiplicity="*" />
@@ -357,18 +363,6 @@
       </Principal>
       <Dependent Role="Share">
         <PropertyRef Name="Checklist_ChecklistId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="UserShare">
-    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
-    <End Role="Share" Type="CheckIt.Entities.Store.Shares" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Share">
-        <PropertyRef Name="User_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -480,18 +474,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="UserAccount">
-    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
-    <End Role="Account" Type="CheckIt.Entities.Store.Accounts" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Account">
-        <PropertyRef Name="User_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ItemAnswer">
     <End Role="Item" Type="CheckIt.Entities.Store.Items" Multiplicity="1" />
     <End Role="Answer" Type="CheckIt.Entities.Store.Answers" Multiplicity="*" />
@@ -504,15 +486,63 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="CountryAccount">
+    <End Role="Country" Type="CheckIt.Entities.Store.Countries" Multiplicity="1" />
+    <End Role="Account" Type="CheckIt.Entities.Store.Accounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="Country_CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserChecklist">
+    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
+    <End Role="Checklist" Type="CheckIt.Entities.Store.Checklists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Checklist">
+        <PropertyRef Name="User_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserShare">
+    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
+    <End Role="Share" Type="CheckIt.Entities.Store.Shares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Share">
+        <PropertyRef Name="User_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAccount">
+    <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
+    <End Role="Account" Type="CheckIt.Entities.Store.Accounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="User_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="UserAnswer">
     <End Role="User" Type="CheckIt.Entities.Store.Users" Multiplicity="1" />
     <End Role="Answer" Type="CheckIt.Entities.Store.Answers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="User">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="UserId" />
       </Principal>
       <Dependent Role="Answer">
-        <PropertyRef Name="User_Id" />
+        <PropertyRef Name="User_UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -648,7 +678,6 @@
           <EntitySet Name="Checklists" EntityType="CheckIt.Entities.Checklist" />
           <EntitySet Name="Sections" EntityType="CheckIt.Entities.Section" />
           <EntitySet Name="Items" EntityType="CheckIt.Entities.Item" />
-          <EntitySet Name="Users" EntityType="CheckIt.Entities.User" />
           <EntitySet Name="Accounts" EntityType="CheckIt.Entities.Account" />
           <EntitySet Name="Categorys" EntityType="CheckIt.Entities.Category" />
           <EntitySet Name="Keywords" EntityType="CheckIt.Entities.Keyword" />
@@ -663,17 +692,9 @@
             <End Role="Category" EntitySet="Categorys" />
             <End Role="Category1" EntitySet="Categorys" />
           </AssociationSet>
-          <AssociationSet Name="UserChecklist" Association="CheckIt.Entities.UserChecklist">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Checklist" EntitySet="Checklists" />
-          </AssociationSet>
           <EntitySet Name="Shares" EntityType="CheckIt.Entities.Share" />
           <AssociationSet Name="ChecklistShare" Association="CheckIt.Entities.ChecklistShare">
             <End Role="Checklist" EntitySet="Checklists" />
-            <End Role="Share" EntitySet="Shares" />
-          </AssociationSet>
-          <AssociationSet Name="UserShare" Association="CheckIt.Entities.UserShare">
-            <End Role="User" EntitySet="Users" />
             <End Role="Share" EntitySet="Shares" />
           </AssociationSet>
           <AssociationSet Name="ChecklistSection" Association="CheckIt.Entities.ChecklistSection">
@@ -724,10 +745,6 @@
             <End Role="Item" EntitySet="Items" />
             <End Role="Keyword" EntitySet="Keywords" />
           </AssociationSet>
-          <AssociationSet Name="UserAccount" Association="CheckIt.Entities.UserAccount">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Account" EntitySet="Accounts" />
-          </AssociationSet>
           <AssociationSet Name="KeywordKeyword" Association="CheckIt.Entities.KeywordKeyword">
             <End Role="Keyword" EntitySet="Keywords" />
             <End Role="Keyword1" EntitySet="Keywords" />
@@ -737,14 +754,27 @@
             <End Role="Item" EntitySet="Items" />
             <End Role="Answer" EntitySet="Answers" />
           </AssociationSet>
-          <AssociationSet Name="UserAnswer" Association="CheckIt.Entities.UserAnswer">
-            <End Role="User" EntitySet="Users" />
-            <End Role="Answer" EntitySet="Answers" />
-          </AssociationSet>
           <EntitySet Name="Countries" EntityType="CheckIt.Entities.Country" />
           <AssociationSet Name="CountryAccount" Association="CheckIt.Entities.CountryAccount">
             <End Role="Country" EntitySet="Countries" />
             <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <EntitySet Name="Users" EntityType="CheckIt.Entities.User" />
+          <AssociationSet Name="UserChecklist" Association="CheckIt.Entities.UserChecklist">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Checklist" EntitySet="Checklists" />
+          </AssociationSet>
+          <AssociationSet Name="UserShare" Association="CheckIt.Entities.UserShare">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Share" EntitySet="Shares" />
+          </AssociationSet>
+          <AssociationSet Name="UserAccount" Association="CheckIt.Entities.UserAccount">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="UserAnswer" Association="CheckIt.Entities.UserAnswer">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Answer" EntitySet="Answers" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Checklist">
@@ -770,12 +800,11 @@
           <Property Name="Language" Type="String" Nullable="false" DefaultValue="en" MaxLength="6" />
           <Property Name="Created" Type="DateTime" Nullable="false" />
           <Property Name="Modified" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserChecklist" FromRole="Checklist" ToRole="User" />
-          <NavigationProperty Name="Share" Relationship="CheckIt.Entities.ChecklistShare" FromRole="Checklist" ToRole="Share" />
           <Property Name="Status" Type="CheckIt.Entities.ItemStatus" Nullable="false" />
           <NavigationProperty Name="Sections" Relationship="CheckIt.Entities.ChecklistSection" FromRole="Checklist" ToRole="Section" />
           <NavigationProperty Name="Category" Relationship="CheckIt.Entities.CategoryChecklist" FromRole="Checklist" ToRole="Category" />
           <NavigationProperty Name="Keywords" Relationship="CheckIt.Entities.ChecklistKeyword" FromRole="Checklist" ToRole="Keyword" />
+          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserChecklist" FromRole="Checklist" ToRole="User" />
         </EntityType>
         <EntityType Name="Section">
           <Key>
@@ -821,15 +850,10 @@
         </EntityType>
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="Id" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="128" />
-          <Property Name="PasswordHash" Type="String" Nullable="true" />
-          <Property Name="SecurityStamp" Type="String" Nullable="true" />
-          <Property Name="UserName" Type="String" Nullable="true" />
-          <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" />
+          <Property Name="UserId" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" MaxLength="128" />
           <NavigationProperty Name="Checklists" Relationship="CheckIt.Entities.UserChecklist" FromRole="User" ToRole="Checklist" />
-          <NavigationProperty Name="Share" Relationship="CheckIt.Entities.UserShare" FromRole="User" ToRole="Share" />
           <NavigationProperty Name="Account" Relationship="CheckIt.Entities.UserAccount" FromRole="User" ToRole="Account" />
           <NavigationProperty Name="Answers" Relationship="CheckIt.Entities.UserAnswer" FromRole="User" ToRole="Answer" />
         </EntityType>
@@ -845,9 +869,9 @@
           <Property Name="Status" Type="CheckIt.Entities.AccountStatus" Nullable="false" />
           <NavigationProperty Name="Folders" Relationship="CheckIt.Entities.AccountFolder" FromRole="Account" ToRole="Folder" />
           <NavigationProperty Name="Favorites" Relationship="CheckIt.Entities.AccountFavorite" FromRole="Account" ToRole="Favorite" />
-          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserAccount" FromRole="Account" ToRole="User" />
           <Property Name="DefaultLanguage" Type="String" Nullable="false" MaxLength="6" DefaultValue="en" />
           <NavigationProperty Name="Country" Relationship="CheckIt.Entities.CountryAccount" FromRole="Account" ToRole="Country" />
+          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserAccount" FromRole="Account" ToRole="User" />
         </EntityType>
         <EntityType Name="Category">
           <Documentation>
@@ -933,26 +957,18 @@
           <End Type="CheckIt.Entities.Category" Role="Category" Multiplicity="1" />
           <End Type="CheckIt.Entities.Category" Role="Category1" Multiplicity="*" />
         </Association>
-        <Association Name="UserChecklist">
-          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
-          <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="*" />
-        </Association>
         <EntityType Name="Share">
           <Key>
             <PropertyRef Name="ShareId" />
           </Key>
           <Property Name="ShareId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <NavigationProperty Name="Checklist" Relationship="CheckIt.Entities.ChecklistShare" FromRole="Share" ToRole="Checklist" />
-          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserShare" FromRole="Share" ToRole="User" />
           <Property Name="AccessLevel" Type="CheckIt.Entities.AccessLevel" Nullable="false" />
           <Property Name="Created" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserShare" FromRole="Share" ToRole="User" />
         </EntityType>
         <Association Name="ChecklistShare">
           <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="1" />
-          <End Type="CheckIt.Entities.Share" Role="Share" Multiplicity="*" />
-        </Association>
-        <Association Name="UserShare">
-          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
           <End Type="CheckIt.Entities.Share" Role="Share" Multiplicity="*" />
         </Association>
         <EnumType Name="AccessLevel" IsFlags="true">
@@ -1021,10 +1037,6 @@
           <End Type="CheckIt.Entities.Item" Role="Item" Multiplicity="*" />
           <End Type="CheckIt.Entities.Keyword" Role="Keyword" Multiplicity="*" />
         </Association>
-        <Association Name="UserAccount">
-          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
-          <End Type="CheckIt.Entities.Account" Role="Account" Multiplicity="0..1" />
-        </Association>
         <EnumType Name="ItemType">
           <Member Name="Dichotomous" />
           <Member Name="Text" />
@@ -1039,17 +1051,13 @@
           </Key>
           <Property Name="AnswerId" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <NavigationProperty Name="Item" Relationship="CheckIt.Entities.ItemAnswer" FromRole="Answer" ToRole="Item" />
-          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserAnswer" FromRole="Answer" ToRole="User" />
           <Property Name="Created" Type="DateTime" Nullable="false" />
           <Property Name="Modified" Type="DateTime" Nullable="false" />
           <Property Name="Value" Type="Binary" />
+          <NavigationProperty Name="User" Relationship="CheckIt.Entities.UserAnswer" FromRole="Answer" ToRole="User" />
         </EntityType>
         <Association Name="ItemAnswer">
           <End Type="CheckIt.Entities.Item" Role="Item" Multiplicity="1" />
-          <End Type="CheckIt.Entities.Answer" Role="Answer" Multiplicity="*" />
-        </Association>
-        <Association Name="UserAnswer">
-          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
           <End Type="CheckIt.Entities.Answer" Role="Answer" Multiplicity="*" />
         </Association>
         <EntityType Name="DichotomyAnswer" BaseType="CheckIt.Entities.Answer" />
@@ -1073,6 +1081,22 @@
         <Association Name="CountryAccount">
           <End Type="CheckIt.Entities.Country" Role="Country" Multiplicity="1" />
           <End Type="CheckIt.Entities.Account" Role="Account" Multiplicity="*" />
+        </Association>
+        <Association Name="UserChecklist">
+          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Checklist" Role="Checklist" Multiplicity="*" />
+        </Association>
+        <Association Name="UserShare">
+          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Share" Role="Share" Multiplicity="*" />
+        </Association>
+        <Association Name="UserAccount">
+          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Account" Role="Account" Multiplicity="0..1" />
+        </Association>
+        <Association Name="UserAnswer">
+          <End Type="CheckIt.Entities.User" Role="User" Multiplicity="1" />
+          <End Type="CheckIt.Entities.Answer" Role="Answer" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -1112,6 +1136,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Item)">
         <MappingFragment StoreEntitySet="Items">
           <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Reference1" ColumnName="Reference1" />
           <ScalarProperty Name="Reference2" ColumnName="Reference2" />
@@ -1123,17 +1148,6 @@
       <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.DichotomyItem)">
         <MappingFragment StoreEntitySet="Items_DichotomyItem">
           <ScalarProperty Name="ItemId" ColumnName="ItemId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.User)">
-        <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
-          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1220,6 +1234,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.Country)">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="Iso2" ColumnName="Iso2" />
+          <ScalarProperty Name="Iso3" ColumnName="Iso3" />
+          <ScalarProperty Name="NumCode" ColumnName="NumCode" />
+          <ScalarProperty Name="UNMember" ColumnName="UNMember" />
+          <ScalarProperty Name="CallingCode" ColumnName="CallingCode" />
+          <ScalarProperty Name="Cctld" ColumnName="Cctld" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(CheckIt.Entities.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="AreaCategory" TypeName="CheckIt.Entities.AreaCategory" StoreEntitySet="Categorys">
       <EndProperty Name="Area">
         <ScalarProperty Name="AreaId" ColumnName="Area_AreaId" />
@@ -1236,25 +1273,9 @@
         <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="UserChecklist" TypeName="CheckIt.Entities.UserChecklist" StoreEntitySet="Checklists">
-      <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
-      </EndProperty>
-      <EndProperty Name="Checklist">
-        <ScalarProperty Name="ChecklistId" ColumnName="ChecklistId" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="ChecklistShare" TypeName="CheckIt.Entities.ChecklistShare" StoreEntitySet="Shares">
       <EndProperty Name="Checklist">
         <ScalarProperty Name="ChecklistId" ColumnName="Checklist_ChecklistId" />
-      </EndProperty>
-      <EndProperty Name="Share">
-        <ScalarProperty Name="ShareId" ColumnName="ShareId" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="UserShare" TypeName="CheckIt.Entities.UserShare" StoreEntitySet="Shares">
-      <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
       </EndProperty>
       <EndProperty Name="Share">
         <ScalarProperty Name="ShareId" ColumnName="ShareId" />
@@ -1358,14 +1379,6 @@
         <ScalarProperty Name="KeywordId" ColumnName="Keywords_KeywordId" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="UserAccount" TypeName="CheckIt.Entities.UserAccount" StoreEntitySet="Accounts">
-      <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
-      </EndProperty>
-      <EndProperty Name="Account">
-        <ScalarProperty Name="AccountId" ColumnName="AccountId" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="KeywordKeyword" TypeName="CheckIt.Entities.KeywordKeyword" StoreEntitySet="KeywordKeyword">
       <EndProperty Name="Keyword">
         <ScalarProperty Name="KeywordId" ColumnName="ReferencedKeywords_KeywordId" />
@@ -1382,9 +1395,41 @@
         <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
       </EndProperty>
     </AssociationSetMapping>
+    <AssociationSetMapping Name="CountryAccount" TypeName="CheckIt.Entities.CountryAccount" StoreEntitySet="Accounts">
+      <EndProperty Name="Country">
+        <ScalarProperty Name="CountryId" ColumnName="Country_CountryId" />
+      </EndProperty>
+      <EndProperty Name="Account">
+        <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserChecklist" TypeName="CheckIt.Entities.UserChecklist" StoreEntitySet="Checklists">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserId" ColumnName="User_UserId" />
+      </EndProperty>
+      <EndProperty Name="Checklist">
+        <ScalarProperty Name="ChecklistId" ColumnName="ChecklistId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserShare" TypeName="CheckIt.Entities.UserShare" StoreEntitySet="Shares">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserId" ColumnName="User_UserId" />
+      </EndProperty>
+      <EndProperty Name="Share">
+        <ScalarProperty Name="ShareId" ColumnName="ShareId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserAccount" TypeName="CheckIt.Entities.UserAccount" StoreEntitySet="Accounts">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserId" ColumnName="User_UserId" />
+      </EndProperty>
+      <EndProperty Name="Account">
+        <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+      </EndProperty>
+    </AssociationSetMapping>
     <AssociationSetMapping Name="UserAnswer" TypeName="CheckIt.Entities.UserAnswer" StoreEntitySet="Answers">
       <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
+        <ScalarProperty Name="UserId" ColumnName="User_UserId" />
       </EndProperty>
       <EndProperty Name="Answer">
         <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
@@ -1402,10 +1447,10 @@
     </edmx:Connection>
     <edmx:Options>
       <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="ValidateOnBuild" Value="False" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-        <DesignerProperty Name="DefaultDatabaseSchema" Value="checkIt" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="CheckIt" />
         <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>

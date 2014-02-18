@@ -17,18 +17,12 @@ namespace CheckIt.Entities
         public User()
         {
             this.Checklists = new HashSet<Checklist>();
-            this.Share = new HashSet<Share>();
             this.Answers = new HashSet<Answer>();
         }
     
-        public string Id { get; set; }
-        public string PasswordHash { get; set; }
-        public string SecurityStamp { get; set; }
-        public string UserName { get; set; }
-        public string Discriminator { get; set; }
+        public string UserId { get; set; }
     
         public virtual ICollection<Checklist> Checklists { get; set; }
-        public virtual ICollection<Share> Share { get; set; }
         public virtual Account Account { get; set; }
         public virtual ICollection<Answer> Answers { get; set; }
     }

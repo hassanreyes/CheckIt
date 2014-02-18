@@ -31,7 +31,7 @@ namespace CheckIt.Entities
     
         public virtual ICollection<Folder> Folders { get; set; }
         public virtual ICollection<Favorite> Favorites { get; set; }
-        public virtual User User { get; set; }
         public virtual Country Country { get; set; }
+        public virtual User User { get; set; }
     }
 }
