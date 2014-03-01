@@ -36,6 +36,12 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -47,10 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckItContextFactory.cs" />
-    <Compile Include="DbBuilderContext .cs" />
-    <Compile Include="Migrations\201402220236257_Area-Category.cs" />
-    <Compile Include="Migrations\201402220236257_Area-Category.Designer.cs">
-      <DependentUpon>201402220236257_Area-Category.cs</DependentUpon>
+    <Compile Include="CheckItContext .cs" />
+    <Compile Include="Migrations\201403012038230_InitialCreate.cs" />
+    <Compile Include="Migrations\201403012038230_InitialCreate.Designer.cs">
+      <DependentUpon>201403012038230_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201402220236257_Area-Category.resx">
-      <DependentUpon>201402220236257_Area-Category.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403012038230_InitialCreate.resx">
+      <DependentUpon>201403012038230_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

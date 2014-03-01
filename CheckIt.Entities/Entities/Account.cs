@@ -19,7 +19,7 @@ namespace CheckIt.Entities
         public virtual string Industry { get; set; }
         public virtual AccountStatus Status { get; set; }
         public virtual string DefaultLanguage { get; set; }
-        public virtual Guid User_Id { get; set; }
+        //public virtual string User_Id { get; set; }
 
         public virtual List<Folder> Folders { get; set; }
         public virtual List<Favorite> Favorites { get; set; }

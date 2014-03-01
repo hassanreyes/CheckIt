@@ -7,13 +7,13 @@ namespace CheckIt.Doamin.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.2-21211")]
-    public sealed partial class AreaCategory : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AreaCategory));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201402220236257_Area-Category"; }
+            get { return "201403012038230_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
