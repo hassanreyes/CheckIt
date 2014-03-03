@@ -18,7 +18,7 @@ namespace CheckIt.Entities
         public virtual string Reference2 { get; set; }
         public virtual long Hints { get; set; }
         public virtual ItemStatus Status { get; set; }
-        public virtual ItemType Type { get; set; }
+        //public virtual ItemType Type { get; set; }
         public virtual Guid Section_Id { get; set; }
 
         public virtual Section Section { get; set; }

@@ -176,7 +176,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,7 +202,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -240,6 +241,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CheckIt.Doamin\CheckIt.Domain.csproj">
+      <Project>{42c5e9d1-f0ca-49a3-bc51-366e02ba6822}</Project>
+      <Name>CheckIt.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CheckIt.Entities\CheckIt.Entities.csproj">
       <Project>{30dbfa51-3b94-48d1-aa25-189473e97339}</Project>
       <Name>CheckIt.Entities</Name>

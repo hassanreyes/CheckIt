@@ -1,18 +1,18 @@
-namespace CheckIt.Doamin.Migrations
+namespace CheckIt.Domain.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CheckIt.Doamin.CheckItContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<CheckIt.Domain.CheckItContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(CheckIt.Doamin.CheckItContext context)
+        protected override void Seed(CheckIt.Domain.CheckItContext context)
         {
             //  This method will be called after migrating to the latest version.
 

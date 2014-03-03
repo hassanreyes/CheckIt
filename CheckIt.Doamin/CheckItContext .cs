@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 
-namespace CheckIt.Doamin
+namespace CheckIt.Domain
 {
     public class CheckItContext : IdentityDbContext<User>
     {
@@ -29,11 +29,15 @@ namespace CheckIt.Doamin
         #endregion
 
         public CheckItContext (string connStringName):
-            base("CheckItConnection")
+            base(connStringName)
         {
             this.Configuration.LazyLoadingEnabled = true;
             this.Configuration.ProxyCreationEnabled = false;
+            this.Configuration.AutoDetectChangesEnabled = false;
+
             this.SchemaName = "chkit";
+
+            System.Diagnostics.Debug.Write(Database.Connection.ConnectionString);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckIt.Data", "CheckIt.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckIt.Mapping", "CheckIt.Mapping\CheckIt.Mapping.csproj", "{E61FC37B-972F-413E-BCE5-44F21E0A9B8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckIt.Doamin", "CheckIt.Doamin\CheckIt.Doamin.csproj", "{42C5E9D1-F0CA-49A3-BC51-366E02BA6822}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckIt.Domain", "CheckIt.Doamin\CheckIt.Domain.csproj", "{42C5E9D1-F0CA-49A3-BC51-366E02BA6822}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckIt.Data.Infras", "CheckIt.Data.Infras\CheckIt.Data.Infras.csproj", "{9D97C04E-9372-4521-8F1A-E1E294684DE9}"
 EndProject

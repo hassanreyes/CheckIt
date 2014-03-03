@@ -18,6 +18,7 @@ namespace CheckIt.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            System.Data.Entity.Database.SetInitializer<CheckIt.Domain.CheckItContext>(null);
         }
     }
 }

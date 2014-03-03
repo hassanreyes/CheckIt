@@ -7,8 +7,8 @@
     <ProjectGuid>{42C5E9D1-F0CA-49A3-BC51-366E02BA6822}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CheckIt.Doamin</RootNamespace>
-    <AssemblyName>CheckIt.Doamin</AssemblyName>
+    <RootNamespace>CheckIt.Domain</RootNamespace>
+    <AssemblyName>CheckIt.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -54,9 +54,9 @@
   <ItemGroup>
     <Compile Include="CheckItContextFactory.cs" />
     <Compile Include="CheckItContext .cs" />
-    <Compile Include="Migrations\201403012038230_InitialCreate.cs" />
-    <Compile Include="Migrations\201403012038230_InitialCreate.Designer.cs">
-      <DependentUpon>201403012038230_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201403030433250_InitialCreate.cs" />
+    <Compile Include="Migrations\201403030433250_InitialCreate.Designer.cs">
+      <DependentUpon>201403030433250_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201403012038230_InitialCreate.resx">
-      <DependentUpon>201403012038230_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403030433250_InitialCreate.resx">
+      <DependentUpon>201403030433250_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
