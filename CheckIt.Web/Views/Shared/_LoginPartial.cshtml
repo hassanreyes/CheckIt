@@ -7,9 +7,19 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+            <div class="btn-group">
+                <button type="button" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user"></span>&nbsp;
+                    @User.Identity.GetUserName()
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("My Account", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+                    <li><a href="#">My Checklist</a></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                </ul>
+            </div>
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
     }
 }

@@ -13,11 +13,6 @@ namespace CheckIt.Web.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        public AccountController()
-            : this(new UserManager<User>(new UserStore<User>(new CheckItContext("CheckItContext"))))
-        {
-        }
-
         public AccountController(UserManager<User> userManager)
         {
             UserManager = userManager;
@@ -76,7 +71,7 @@ namespace CheckIt.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User() { UserName = model.UserName };
+                var user = new User() { UserName = model.UserName, IsTemporal = false };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201403030433250_InitialCreate.Designer.cs">
       <DependentUpon>201403030433250_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403070352370_User-IsTemporal.cs" />
+    <Compile Include="Migrations\201403070352370_User-IsTemporal.Designer.cs">
+      <DependentUpon>201403070352370_User-IsTemporal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +82,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403030433250_InitialCreate.resx">
       <DependentUpon>201403030433250_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403070352370_User-IsTemporal.resx">
+      <DependentUpon>201403070352370_User-IsTemporal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
