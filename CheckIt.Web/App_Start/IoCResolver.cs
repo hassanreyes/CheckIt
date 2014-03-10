@@ -2,12 +2,12 @@
 using Autofac.Integration.Mvc;
 using CheckIt.Domain;
 using CheckIt.Entities;
-using CheckIt.Web.Controllers;
+using CheckIt.Framework.Encryption;
 using CheckIt.Web.Infras.Repository;
-using Microsoft.AspNet.Identity;
+using CheckIt.Web.Infras.Security;
+using CheckIt.Web.Infras.Services;
+using CheckIt.Web.Service;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
-using System.Web.Mvc;
 
 namespace CheckIt.Web
 {
@@ -20,7 +20,7 @@ namespace CheckIt.Web
                 
                 builder.Register(c => new CheckItContext("CheckItContext"));
                 builder.Register(c => new UserStore<User>(c.Resolve<CheckItContext>()));
-                builder.Register(c => new UserManager<User>(c.Resolve<UserStore<User>>()));
+                builder.Register(c => new CheckItUserManager(c.Resolve<UserStore<User>>()));
             }
         }
 
@@ -39,10 +39,19 @@ namespace CheckIt.Web
             }
         }
 
+        internal class ServicesModule : Module
+        {
+            protected override void Load(ContainerBuilder builder)
+            {
+                builder.RegisterType<AccountService>().As<IAccountService>().InstancePerHttpRequest();
+            }
+        }
+
         internal class InfrastructureModule : Module
         {
             protected override void Load(ContainerBuilder builder)
             {
+                builder.RegisterType<Encryptor>().AsImplementedInterfaces().SingleInstance();
                 ///TODO: nlog
             }
         }

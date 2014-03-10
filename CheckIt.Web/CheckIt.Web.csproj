@@ -273,9 +273,21 @@
       <Project>{30dbfa51-3b94-48d1-aa25-189473e97339}</Project>
       <Name>CheckIt.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CheckIt.Framework\CheckIt.Framework.csproj">
+      <Project>{1382c1cd-51cc-45aa-bbcf-7ca1f5f14c6f}</Project>
+      <Name>CheckIt.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CheckIt.Resources\CheckIt.Resources.csproj">
+      <Project>{d6f5d6db-3f71-4cae-b68b-bde27bdb7002}</Project>
+      <Name>CheckIt.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CheckIt.Web.Infras\CheckIt.Web.Infras.csproj">
       <Project>{a4339505-31f3-4585-9d8a-d6dc36fa3e26}</Project>
       <Name>CheckIt.Web.Infras</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CheckIt.Web.Service\CheckIt.Web.Service.csproj">
+      <Project>{cbb741e0-7e3e-4fc5-a34b-0e7451c9c214}</Project>
+      <Name>CheckIt.Web.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -7,18 +7,26 @@ using Microsoft.Owin.Security;
 using CheckIt.Web.Models;
 using CheckIt.Entities;
 using CheckIt.Domain;
+using CheckIt.Resources;
+using CheckIt.Web.Infras.Security;
 
 namespace CheckIt.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
-        public AccountController(UserManager<User> userManager)
+        public AccountController()
+            : this(DependencyResolver.Current.GetService<CheckItUserManager>())
+        {
+        }
+
+
+        public AccountController(CheckItUserManager userManager)
         {
             UserManager = userManager;
         }
 
-        public UserManager<User> UserManager { get; private set; }
+        public CheckItUserManager UserManager { get; private set; }
 
         //
         // GET: /Account/Login
@@ -46,7 +54,7 @@ namespace CheckIt.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", Resources.Resources.InvalidUsernameAndPassword);
                 }
             }
 
@@ -115,7 +123,7 @@ namespace CheckIt.Web.Controllers
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
                 : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
-                : message == ManageMessageId.Error ? "An error has occurred."
+                : message == ManageMessageId.Error ? Resources.Resources.AnErrorOccurred
                 : "";
             ViewBag.HasLocalPassword = HasPassword();
             ViewBag.ReturnUrl = Url.Action("Manage");

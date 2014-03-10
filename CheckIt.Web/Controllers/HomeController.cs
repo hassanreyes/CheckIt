@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CheckIt.Web.Infras.Controllers;
+using CheckIt.Web.Infras.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CheckIt.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
@@ -26,5 +28,23 @@ namespace CheckIt.Web.Controllers
 
             return View();
         }
+
+        public ActionResult SetCulture(string culture)
+        {
+            // Validate input
+            culture = CultureHelper.GetImplementedCulture(culture);
+            // Save culture in a cookie
+            HttpCookie cookie = Request.Cookies[Constants.CultureKey];
+            if (cookie != null)
+                cookie.Value = culture;   // update cookie value
+            else
+            {
+                cookie = new HttpCookie(Constants.CultureKey);
+                cookie.Value = culture;
+                cookie.Expires = DateTime.Now.AddYears(1);
+            }
+            Response.Cookies.Add(cookie);
+            return RedirectToAction("Index");
+        } 
     }
 }

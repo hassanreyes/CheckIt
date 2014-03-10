@@ -1,5 +1,6 @@
 namespace CheckIt.Domain.Migrations
 {
+    using CheckIt.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,12 @@ namespace CheckIt.Domain.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Users.AddOrUpdate(
+                u => u.UserName,
+                new User { UserName = "Administrator", PasswordHash = "", Email = "hassan.reyes@gmail.com"},
+                new User { UserName = "_Temp_", PasswordHash = "", IsTemporal = true}
+                );
         }
     }
 }

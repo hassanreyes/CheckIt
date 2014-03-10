@@ -58,8 +58,10 @@ namespace CheckIt.Web
             // You can make property injection available to your MVC views by adding the ViewRegistrationSource to your ContainerBuilder before building the application container.
             //builder.RegisterSource(new ViewRegistrationSource());
             // An example of a module that registers the dependencies for a ServiceLayer of your application
+            builder.RegisterModule(new IoCResolver.InfrastructureModule());
             builder.RegisterModule(new IoCResolver.IdentityModule());
             builder.RegisterModule(new IoCResolver.RepositoriesModule());
+            builder.RegisterModule(new IoCResolver.ServicesModule());
             
             return builder.Build();
         }

@@ -67,6 +67,7 @@ namespace CheckIt.Domain
 
             table1.HasRequired<IdentityUser>((IdentityUserClaim u) => u.User);
 
+
             modelBuilder.Configurations.Add(new AccountMapping(this.SchemaName));
             modelBuilder.Configurations.Add(new AreaMapping(this.SchemaName));
             modelBuilder.Configurations.Add(new CategoryMapping(this.SchemaName));

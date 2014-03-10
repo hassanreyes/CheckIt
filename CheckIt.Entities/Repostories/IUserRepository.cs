@@ -6,6 +6,7 @@ namespace CheckIt.Entities
     {
         User GetUserByUserName(string userName);
         bool ValidateUser(string id, string password);
-        //Guid CreateUser(string id, string displayName, string password, string email, int role, string createdBy);
+        bool SaveUser(User user);
+        bool DeleteUser(User user);
     }
 }
