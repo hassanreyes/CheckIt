@@ -2,28 +2,28 @@
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using CheckIt.Web.Models;
 using CheckIt.Entities;
-using CheckIt.Domain;
-using CheckIt.Resources;
 using CheckIt.Web.Infras.Security;
+using CheckIt.Data.Infras.Logging;
 
 namespace CheckIt.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        ILogger _logger;
+
         public AccountController()
             : this(DependencyResolver.Current.GetService<CheckItUserManager>())
         {
         }
 
-
         public AccountController(CheckItUserManager userManager)
         {
             UserManager = userManager;
+            _logger = DependencyResolver.Current.GetService<ILogger>();
         }
 
         public CheckItUserManager UserManager { get; private set; }
@@ -49,11 +49,15 @@ namespace CheckIt.Web.Controllers
                 var user = await UserManager.FindAsync(model.UserName, model.Password);
                 if (user != null)
                 {
+                    _logger.Info("User " + user.UserName + " has logged in");
+
                     await SignInAsync(user, model.RememberMe);
                     return RedirectToLocal(returnUrl);
                 }
                 else
                 {
+                    _logger.Info("User " + user.UserName + " could not logged in");
+
                     ModelState.AddModelError("", Resources.Resources.InvalidUsernameAndPassword);
                 }
             }

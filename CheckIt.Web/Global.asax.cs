@@ -13,6 +13,12 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using NLog.Config;
+using NLog.LayoutRenderers;
+using NLog.Common;
+using NLog;
+using CheckIt.Web.Infras.Services.Logging;
+using CheckIt.Web.Infras.Services.Logging.NLog;
 
 namespace CheckIt.Web
 {
@@ -31,6 +37,14 @@ namespace CheckIt.Web
 
         protected void Application_Start()
         {
+            //ControllerBuilder.Current.SetControllerFactory(new ErrorHandlingControllerFactory());
+            //ConfigurationItemFactory.Default.LayoutRenderers.RegisterDefinition("utc_date", typeof(CheckIt.Web.Infras.Services.Logging.NLog.UtcDateRenderer));
+            //ConfigurationItemFactory.Default.LayoutRenderers.RegisterDefinition("web_variables", typeof(CheckIt.Web.Infras.Services.Logging.NLog.WebVariablesRenderer));
+            
+            string nlogPath = Server.MapPath("nlog-web.log");
+            InternalLogger.LogFile = nlogPath;
+            InternalLogger.LogLevel = NLog.LogLevel.Trace;
+            
             // Once you're done registering things, set the container
             // provider up with your registrations.
             _containerProvider = new ContainerProvider(BootstrapContainer());

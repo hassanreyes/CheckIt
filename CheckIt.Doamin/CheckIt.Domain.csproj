@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="CheckItContextFactory.cs" />
     <Compile Include="CheckItContext .cs" />
+    <Compile Include="CheckItDbConfiguration.cs" />
     <Compile Include="Migrations\201403030433250_InitialCreate.cs" />
     <Compile Include="Migrations\201403030433250_InitialCreate.Designer.cs">
       <DependentUpon>201403030433250_InitialCreate.cs</DependentUpon>
@@ -66,6 +67,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CheckIt.Data.Infras\CheckIt.Data.Infras.csproj">
+      <Project>{9d97c04e-9372-4521-8f1a-e1e294684de9}</Project>
+      <Name>CheckIt.Data.Infras</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CheckIt.Entities\CheckIt.Entities.csproj">
       <Project>{30dbfa51-3b94-48d1-aa25-189473e97339}</Project>
       <Name>CheckIt.Entities</Name>
