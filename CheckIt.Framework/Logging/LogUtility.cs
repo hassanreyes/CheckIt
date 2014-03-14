@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CheckIt.Data.Infras.Logging
+namespace CheckIt.Framework.Logging
 {
     public static class LogUtility
     {

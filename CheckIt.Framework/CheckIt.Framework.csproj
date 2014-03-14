@@ -65,6 +65,8 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Guard.cs" />
     <Compile Include="IEnsureNotNull.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\LogUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

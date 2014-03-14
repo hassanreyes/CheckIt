@@ -6,7 +6,7 @@ using Microsoft.Owin.Security;
 using CheckIt.Web.Models;
 using CheckIt.Entities;
 using CheckIt.Web.Infras.Security;
-using CheckIt.Data.Infras.Logging;
+using CheckIt.Framework.Logging;
 
 namespace CheckIt.Web.Controllers
 {

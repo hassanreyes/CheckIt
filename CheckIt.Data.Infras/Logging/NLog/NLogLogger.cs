@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using CheckIt.Framework.Logging;
+using NLog;
 using System;
 using System.Data.Common;
 using System.Data.Entity.Infrastructure.Interception;

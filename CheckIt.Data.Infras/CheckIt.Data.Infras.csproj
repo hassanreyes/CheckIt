@@ -55,8 +55,6 @@
     <Compile Include="Extensions\ParameterRebinder.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\LogUtility.cs" />
     <Compile Include="Logging\NLog\NLogLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortOrder.cs" />
@@ -75,6 +73,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CheckIt.Framework\CheckIt.Framework.csproj">
+      <Project>{1382c1cd-51cc-45aa-bbcf-7ca1f5f14c6f}</Project>
+      <Name>CheckIt.Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

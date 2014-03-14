@@ -1,15 +1,13 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using CheckIt.Data.Infras.Logging;
 using CheckIt.Data.Infras.Logging.NLog;
 using CheckIt.Domain;
 using CheckIt.Entities;
 using CheckIt.Framework.Encryption;
+using CheckIt.Framework.Logging;
 using CheckIt.Web.Infras.Repository;
 using CheckIt.Web.Infras.Security;
 using CheckIt.Web.Infras.Services;
-using CheckIt.Web.Infras.Services.Logging;
-using CheckIt.Web.Infras.Services.Logging.NLog;
 using CheckIt.Web.Service;
 using Microsoft.AspNet.Identity.EntityFramework;
 
