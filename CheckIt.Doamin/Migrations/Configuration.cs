@@ -63,10 +63,11 @@ namespace CheckIt.Domain.Migrations
                 context.Users.AddOrUpdate(
                     u => u.Id,
                     new User { Id = "admin", UserName = "Administrator", PasswordHash = "chazin", Email = "hassan.reyes@gmail.com" },
-                    new User { Id = "_Anonymous_", UserName = "_Anonymous_", PasswordHash = "", IsTemporal = true }
+                    new User { Id = CheckItContext.AnonymousUserName, UserName = CheckItContext.AnonymousUserName, PasswordHash = "", IsTemporal = true }
                     );
 
                 Area area = new Area { Name = "Software Engineering", CreatedBy = "System", CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
+                Category catUndefined = new Category { Name = CheckItContext.UndefinedCategoryName, CreatedBy = "System", Area = area, CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
                 Category catImplementation = new Category { /*Id = Guid.Parse(""),*/ Name = "Implementation", CreatedBy = "System", Area = area, CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
                 Category catSupport = new Category { /*Id = Guid.Parse(""),*/ Name = "Support", CreatedBy = "System", Area = area, CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
                 Category catAnalysisAndDesign = new Category { /*Id = Guid.Parse(""),*/ Name = "Analysis and Design", CreatedBy = "System", Area = area, SuperCategory = catImplementation, CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
@@ -91,6 +92,7 @@ namespace CheckIt.Domain.Migrations
 
                 context.Categories.AddOrUpdate(
                     x => x.Name,
+                    catUndefined,
                     catImplementation,
                     catSupport,
                     catAnalysisAndDesign,
