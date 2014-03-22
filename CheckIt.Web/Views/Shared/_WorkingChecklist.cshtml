@@ -1,1 +1,38 @@
-﻿
+﻿@using CheckIt.Entities;
+
+@model CheckIt.Web.Models.WorkingChecklist.WorkingChecklistViewModel
+
+@using (Html.BeginForm("Show", "WorkingChecklist", FormMethod.Post, new { id = "workingChecklistForm", @class = "navbar-left" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @if (Model != null)
+        {
+            <div class="center"><header>@Model.Title</header></div>
+            <ul class="nav navbar-nav navbar-left">
+                <li>@Html.ActionLink("Add Section", "AddSection", "WorkingChecklist")</li>
+                <li>@Html.ActionLink("Add Item", "AddItem", "WorkingChecklist")</li>
+            </ul>
+            foreach (Section sec in Model.Sections)
+            {
+                <header>sec.Name</header>
+                <ul>
+                    foreach (Item item in sec.Items)
+                    {
+                        <li>
+                            <p>item.Content</p>
+                        </li>
+                    }
+                </ul>
+            }
+        }
+        else
+        {
+            <p>
+                Workig checklist was not creaed
+            </p>
+        }
+        @Html.ActionLink("Upload Checklist", "Upload", "Checklist", routeValues: null, htmlAttributes: new { id = "uploadChecklistLink" })
+    </div>
+}

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using CheckIt.Web.Models.WorkingChecklist;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -34,15 +36,7 @@
         <div class="row">
             <div id="leftCol" class="col-md-2">
                 <div class="well">
-                    <ul id="sidebar" class="nav nav-stacked">
-                        <li></li>
-
-                        <li></li>
-
-                        <li></li>
-
-                        <li></li>
-                    </ul>
+                    @Html.Partial("_WorkingChecklist", WorkingChecklistViewModel.Current)
                 </div>
             </div>
             <div class="col-md-8">

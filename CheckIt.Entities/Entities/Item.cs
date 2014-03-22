@@ -1,9 +1,10 @@
-﻿using System;
+﻿using CheckIt.Entities.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace CheckIt.Entities
 {
-    public abstract partial class Item : Entity
+    public abstract partial class Item : Entity, IContentStringSettable
     {
         public Item()
         {
@@ -24,5 +25,10 @@ namespace CheckIt.Entities
         public virtual Section Section { get; set; }
         public virtual List<Keyword> Keywords { get; set; }
         public virtual List<Answer> Answers { get; set; }
+
+        public void SetContentString(string content)
+        {
+            this.Content = content;
+        }
     }
 }

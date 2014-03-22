@@ -1,0 +1,14 @@
+﻿@model CheckIt.Web.Models.Catalog.ChecklistEditionModel
+@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload</h2>
+<p>Upload your checklist, just follow <a href="#">this rules</a>.</p>
+@using (Html.BeginForm("Upload", "Catalog/Checklist", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <input type="file" name="file" />
+    <input type="submit" name="Submit" id="Submit" value="Upload" />
+}

@@ -1,0 +1,10 @@
+﻿@model CheckIt.Web.Models.Search.SearchEntryModel
+
+@using (Html.BeginForm("Search", "Search", FormMethod.Get))
+{
+    <p>
+        @Html.TextBoxFor(model => model.QueryText)
+        <input type="submit" value="Search" />
+        @Html.ValidationMessageFor(model => model.QueryText)
+    </p>
+}

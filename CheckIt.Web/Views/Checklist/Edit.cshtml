@@ -1,0 +1,28 @@
+﻿@using CheckIt.Web.Models.Catalog;
+@model CheckIt.Web.Models.Catalog.ChecklistEditionModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<div>
+    <h2>@Model.Title</h2>
+    <p>@Model.Description</p>
+    <br />
+    @foreach (SectionEditionModel section in Model.Sections)
+    {
+        <div style="padding-left: 20px; ">
+            <h3>@section.Name</h3>
+            <p>@section.Description</p>
+
+            @foreach (ItemEditionModel item in section.Items)
+            {
+                <div style="padding-left: 30px; ">
+                    <p>@item.Content</p>
+                </div>
+            }
+        </div>
+    }
+</div>

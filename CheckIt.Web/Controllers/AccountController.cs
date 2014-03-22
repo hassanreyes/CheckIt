@@ -7,11 +7,12 @@ using CheckIt.Web.Models;
 using CheckIt.Entities;
 using CheckIt.Web.Infras.Security;
 using CheckIt.Framework.Logging;
+using CheckIt.Web.Infras.Controllers;
 
 namespace CheckIt.Web.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         ILogger _logger;
 
@@ -52,6 +53,9 @@ namespace CheckIt.Web.Controllers
                     _logger.Info("User " + user.UserName + " has logged in");
 
                     await SignInAsync(user, model.RememberMe);
+
+                    CheckItUserManager.SessionUser = (User)user;
+
                     return RedirectToLocal(returnUrl);
                 }
                 else

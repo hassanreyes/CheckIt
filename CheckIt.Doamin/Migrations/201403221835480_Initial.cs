@@ -3,7 +3,7 @@ namespace CheckIt.Domain.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -78,8 +78,9 @@ namespace CheckIt.Domain.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 255),
+                        Title = c.String(nullable: false, maxLength: 255),
                         Description = c.String(),
+                        Content = c.String(),
                         Reference1 = c.String(),
                         Reference2 = c.String(),
                         Hints = c.Long(nullable: false),
@@ -177,6 +178,7 @@ namespace CheckIt.Domain.Migrations
                         SecurityStamp = c.String(),
                         DisplayName = c.String(),
                         Email = c.String(),
+                        IsTemporal = c.Boolean(),
                         Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id);

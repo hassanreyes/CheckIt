@@ -13,11 +13,29 @@ namespace CheckIt.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            /* 
+             * Catalog/{ChecklistTitle}/{SectionTitle}/{ItemId}
+             * Catalog/Id/{ChecklistId}/{SectionId}/{ItemId}
+             */
+            routes.MapRoute(
+                name: "CatalogBrowse",
+                url: "Catalog/{checklistTitle}/{sectionTitle}/{itemId}",
+                defaults: new { controller = "Catalog", action = "Show", sectionTitle = UrlParameter.Optional, itemId = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "CategoryBrowse",
+                url: "Category/{categoryName}",
+                defaults: new { controller = "Catalog", action = "ShowCategory", categoryName = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            
         }
     }
 }

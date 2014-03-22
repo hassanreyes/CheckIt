@@ -55,13 +55,9 @@
     <Compile Include="CheckItContextFactory.cs" />
     <Compile Include="CheckItContext .cs" />
     <Compile Include="CheckItDbConfiguration.cs" />
-    <Compile Include="Migrations\201403030433250_InitialCreate.cs" />
-    <Compile Include="Migrations\201403030433250_InitialCreate.Designer.cs">
-      <DependentUpon>201403030433250_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201403070352370_User-IsTemporal.cs" />
-    <Compile Include="Migrations\201403070352370_User-IsTemporal.Designer.cs">
-      <DependentUpon>201403070352370_User-IsTemporal.cs</DependentUpon>
+    <Compile Include="Migrations\201403221835480_Initial.cs" />
+    <Compile Include="Migrations\201403221835480_Initial.Designer.cs">
+      <DependentUpon>201403221835480_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,11 +85,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201403030433250_InitialCreate.resx">
-      <DependentUpon>201403030433250_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201403070352370_User-IsTemporal.resx">
-      <DependentUpon>201403070352370_User-IsTemporal.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403221835480_Initial.resx">
+      <DependentUpon>201403221835480_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

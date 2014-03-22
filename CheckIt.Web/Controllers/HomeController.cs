@@ -45,6 +45,13 @@ namespace CheckIt.Web.Controllers
             }
             Response.Cookies.Add(cookie);
             return RedirectToAction("Index");
-        } 
+        }
+
+        //public ActionResult Search(string txtSearch)
+        //{
+        //    this.ViewData.Add("txtSearch", txtSearch);
+
+        //    return RedirectToActionPermanent("Result", "Search", txtSearch);
+        //}
     }
 }

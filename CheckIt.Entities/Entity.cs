@@ -3,8 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CheckIt.Entities
 {
-    public class Entity
+    public abstract class Entity
     {
+        protected Entity()
+        {
+            CreatedDate = DateTime.UtcNow;
+            ModifiedDate = DateTime.UtcNow;
+        }
+
         public virtual Guid Id
         {
             get;

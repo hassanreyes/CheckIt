@@ -1,0 +1,22 @@
+﻿@using CheckIt.Entities
+@model CheckIt.Web.Models.Search.SearchEntryModel
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if(Model != null && !String.IsNullOrEmpty(Model.QueryText))
+{
+    <h2>Search Result for <i>@Html.DisplayFor(model => model.QueryText)</i> </h2>
+    @Html.Partial("_Search")
+    <br />
+    foreach (Checklist chklst in Model.Result)
+    {
+        <div>
+            <h3>@chklst.Title</h3>
+            <p>
+                @chklst.Description
+            </p>
+        </div>
+    }
+}

@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -14,7 +15,7 @@ compartir y valorar puntos a revisar, de modo que la base de datos de listas de 
     <div class="col-md-4">
         <h2>Search</h2>
         <p>Enter the keywords about the product or process you would like to check.</p>
-        <!--p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></!--p-->
+        @Html.Partial("_Search")
     </div>
     <div class="col-md-4">
         <h2>Discover</h2>

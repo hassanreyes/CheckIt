@@ -1,9 +1,10 @@
-﻿using System;
+﻿using CheckIt.Entities.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace CheckIt.Entities
 {
-    public partial class Section : Entity
+    public partial class Section : Entity, IContentStringSettable
     {
         public Section()
         {
@@ -21,5 +22,10 @@ namespace CheckIt.Entities
         public virtual Checklist Checklist { get; set; }
         public virtual List<Item> Items { get; set; }
         public virtual List<Keyword> Keywords { get; set; }
+
+        public void SetContentString(string content)
+        {
+            this.Name = content;
+        }
     }
 }
