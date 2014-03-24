@@ -1,0 +1,40 @@
+﻿@using CheckIt.Web.Models.Catalog
+@model CheckIt.Web.Models.Catalog.CategoryModel
+@{
+    ViewBag.Title = "Category " + Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<ol class="breadcrumb">
+
+    <li>@Html.ActionLink(Model.Area.Name, "Show", "Area", routeValues: new { id = Model.Area.Id }, htmlAttributes: new { title = Model.Area.Name })</li>
+    @foreach (Tuple<string, string> item in (List<Tuple<string, string>>)ViewData["Route"])
+    {
+        <li>@Html.ActionLink(item.Item2, "Show", routeValues: new { id = item.Item1 }, htmlAttributes: new { title = item.Item2 })</li>
+    }
+   <li class="active">@Model.Name</li>
+</ol>
+
+<ul>
+    @foreach (CategoryModel subCat in Model.SubCategories)
+    {
+        <li>@Html.ActionLink(subCat.Name, "Show", routeValues: new { id = subCat.Id }, htmlAttributes: new { title = subCat.Name})</li>
+    }
+</ul>
+
+<br />
+
+@if(Model.Checklists != null)
+{
+    <h3>Available Checklists</h3>
+    <ul>
+    @foreach (ChecklistSummaryModel chklst in Model.Checklists)
+    {
+        <li>@Html.ActionLink(chklst.Title, "Show", "Checklist", routeValues: new { id = chklst.Id }, htmlAttributes: new { title = chklst.Title })</li>
+    }
+    </ul>
+    
+}
+

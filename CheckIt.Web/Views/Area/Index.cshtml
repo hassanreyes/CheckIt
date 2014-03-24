@@ -1,0 +1,18 @@
+﻿@using CheckIt.Web.Models.Catalog;
+@model  IEnumerable<AreaModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Areas</h2>
+
+@if (Model != null)
+{
+    <ul>
+        @foreach(AreaModel area in Model)
+        {
+            <li>@Html.ActionLink(area.Name, "Show", routeValues: new { id = area.Id }, htmlAttributes: new { title = "Manage" })</li>
+        }
+    </ul>
+}

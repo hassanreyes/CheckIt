@@ -87,16 +87,16 @@ namespace CheckIt.Domain.Migrations
                         Rating = c.Short(nullable: false),
                         Language = c.String(),
                         Status = c.Int(nullable: false),
-                        Category_Id = c.Guid(nullable: false),
+                        Category_Id = c.Guid(),
                         CreatedDate = c.DateTime(nullable: false),
                         CreatedBy = c.String(nullable: false),
                         ModifiedDate = c.DateTime(),
-                        Folder_Id = c.Guid(nullable: false),
+                        Folder_Id = c.Guid(),
                         User_Id = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("chkit.Categories", t => t.Category_Id)
-                .ForeignKey("chkit.Folders", t => t.Folder_Id, cascadeDelete: true)
+                .ForeignKey("chkit.Folders", t => t.Folder_Id)
                 .ForeignKey("chkit.Users", t => t.User_Id, cascadeDelete: true)
                 .Index(t => t.Category_Id)
                 .Index(t => t.Folder_Id)
@@ -391,8 +391,8 @@ namespace CheckIt.Domain.Migrations
             DropForeignKey("chkit.Answers", "Item_Id", "chkit.Items");
             DropForeignKey("chkit.KeywordChecklists", "Checklist_Id", "chkit.Checklists");
             DropForeignKey("chkit.KeywordChecklists", "Keyword_Id", "chkit.Keywords");
-            DropForeignKey("chkit.Folders", "ParentFolder_Id", "chkit.Folders");
             DropForeignKey("chkit.Checklists", "Folder_Id", "chkit.Folders");
+            DropForeignKey("chkit.Folders", "ParentFolder_Id", "chkit.Folders");
             DropForeignKey("chkit.Categories", "SuperCategory_Id", "chkit.Categories");
             DropForeignKey("chkit.Checklists", "Category_Id", "chkit.Categories");
             DropForeignKey("chkit.Categories", "Area_Id", "chkit.Areas");
@@ -423,8 +423,8 @@ namespace CheckIt.Domain.Migrations
             DropIndex("chkit.Answers", new[] { "Item_Id" });
             DropIndex("chkit.KeywordChecklists", new[] { "Checklist_Id" });
             DropIndex("chkit.KeywordChecklists", new[] { "Keyword_Id" });
-            DropIndex("chkit.Folders", new[] { "ParentFolder_Id" });
             DropIndex("chkit.Checklists", new[] { "Folder_Id" });
+            DropIndex("chkit.Folders", new[] { "ParentFolder_Id" });
             DropIndex("chkit.Categories", new[] { "SuperCategory_Id" });
             DropIndex("chkit.Checklists", new[] { "Category_Id" });
             DropIndex("chkit.Categories", new[] { "Area_Id" });

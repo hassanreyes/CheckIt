@@ -70,6 +70,7 @@
     <Compile Include="Entities\Favorite.cs" />
     <Compile Include="Entities\Folder.cs" />
     <Compile Include="Entities\FolderStatus.cs" />
+    <Compile Include="Repostories\IAreaRepository.cs" />
     <Compile Include="Repostories\IAccountRepository.cs" />
     <Compile Include="Repostories\ICategoryRepository.cs" />
     <Compile Include="Repostories\IChecklistRepository.cs" />

@@ -19,8 +19,8 @@ namespace CheckIt.Web
         {
             protected override void Load(ContainerBuilder builder)
             {
-                
-                builder.Register(c => new CheckItContext("CheckItContext"));
+
+                builder.RegisterInstance<CheckItContext>(new CheckItContext("CheckItContext"));
                 builder.Register(c => new UserStore<User>(c.Resolve<CheckItContext>()));
                 builder.Register(c => new CheckItUserManager(c.Resolve<UserStore<User>>()));
             }
@@ -32,6 +32,7 @@ namespace CheckIt.Web
             {
                 builder.RegisterType<AccountRepository>().As<IAccountRepository>().InstancePerHttpRequest();
                 builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerHttpRequest();
+                builder.RegisterType<AreaRepository>().As<IAreaRepository>().InstancePerHttpRequest();
                 builder.RegisterType<CategoryRepository>().As<ICategoryRepository>().InstancePerHttpRequest();
                 builder.RegisterType<ChecklistRepository>().As<IChecklistRepository>().InstancePerHttpRequest();
                 builder.RegisterType<SectionRepository>().As<ISectionRepository>().InstancePerHttpRequest();
@@ -46,6 +47,7 @@ namespace CheckIt.Web
             protected override void Load(ContainerBuilder builder)
             {
                 builder.RegisterType<AccountService>().As<IAccountService>().InstancePerHttpRequest();
+                builder.RegisterType<CatalogService>().As<ICatalogService>().InstancePerHttpRequest();
             }
         }
 

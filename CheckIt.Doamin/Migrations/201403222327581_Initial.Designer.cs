@@ -13,7 +13,7 @@ namespace CheckIt.Domain.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201403221835480_Initial"; }
+            get { return "201403222327581_Initial"; }
         }
         
         string IMigrationMetadata.Source

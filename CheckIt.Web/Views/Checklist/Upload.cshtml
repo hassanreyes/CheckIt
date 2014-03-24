@@ -6,7 +6,7 @@
 
 <h2>Upload</h2>
 <p>Upload your checklist, just follow <a href="#">this rules</a>.</p>
-@using (Html.BeginForm("Upload", "Catalog/Checklist", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Upload", "Checklist", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <input type="file" name="file" />

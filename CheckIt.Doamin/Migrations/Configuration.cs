@@ -13,7 +13,7 @@ namespace CheckIt.Domain.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(CheckIt.Domain.CheckItContext context)
@@ -66,7 +66,7 @@ namespace CheckIt.Domain.Migrations
                     new User { Id = CheckItContext.AnonymousUserName, UserName = CheckItContext.AnonymousUserName, PasswordHash = "", IsTemporal = true }
                     );
 
-                Area area = new Area { Name = "Software Engineering", CreatedBy = "System", CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
+                Area area = new Area { Name = CheckItContext.DefaultAreaName, CreatedBy = "System", CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
                 Category catUndefined = new Category { Name = CheckItContext.UndefinedCategoryName, CreatedBy = "System", Area = area, CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
                 Category catImplementation = new Category { /*Id = Guid.Parse(""),*/ Name = "Implementation", CreatedBy = "System", Area = area, CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };
                 Category catSupport = new Category { /*Id = Guid.Parse(""),*/ Name = "Support", CreatedBy = "System", Area = area, CreatedDate = DateTime.UtcNow, ModifiedDate = DateTime.UtcNow };

@@ -1,0 +1,15 @@
+﻿@using CheckIt.Web.Models.Catalog
+@model CheckIt.Web.Models.Catalog.AreaModel
+@{
+    ViewBag.Title = "Area " + Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<ul>
+    @foreach (CategoryModel category in Model.Categories)
+    {
+        <li>@Html.ActionLink(category.Name, "Show", "Category", routeValues: new { id = category.Id }, htmlAttributes: new { title = category.Name })</li>
+    }
+</ul>

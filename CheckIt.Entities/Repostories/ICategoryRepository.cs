@@ -7,6 +7,8 @@ namespace CheckIt.Entities
     {
         Category GetById(Guid id);
 
+        Category GetByName(string name);
+
         IEnumerable<Category> GetCategories(Area area = null);
 
         bool SaveCategory(Category cat);

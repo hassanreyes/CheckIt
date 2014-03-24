@@ -8,6 +8,10 @@ namespace CheckIt.Domain
 {
     public class CheckItContext : IdentityDbContext<User>
     {
+        public const string DefaultAreaName = "Software Engineering";
+        public const string UndefinedCategoryName = "Undefined";
+        public const string AnonymousUserName = "_Anonymous_";
+
         public string SchemaName { get; set; }
 
         //public DbSet<User> Users { get; set; }
@@ -31,7 +35,7 @@ namespace CheckIt.Domain
         public CheckItContext (string connStringName):
             base(connStringName)
         {
-            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
             this.Configuration.AutoDetectChangesEnabled = false;
 

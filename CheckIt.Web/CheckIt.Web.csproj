@@ -51,6 +51,14 @@
     <Reference Include="Autofac.Integration.WebApi">
       <HintPath>..\packages\Autofac.WebApi.3.1.0\lib\net40\Autofac.Integration.WebApi.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=3.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
@@ -186,21 +194,32 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IoCResolver.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MappingConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Catalog\ChecklistController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChecklistController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\WorkingChecklist\WorkingChecklistController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mapping\AreaMapperProfile.cs" />
+    <Compile Include="Mapping\CategoryMapperProfile.cs" />
+    <Compile Include="Mapping\ChecklistMapperProfile.cs" />
+    <Compile Include="Mapping\ItemMapperProfile.cs" />
+    <Compile Include="Mapping\SectionMapperProfile.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Catalog\AreaModels.cs" />
+    <Compile Include="Models\Catalog\CategoryModels.cs" />
     <Compile Include="Models\Catalog\ChecklistModels.cs" />
     <Compile Include="Models\Catalog\ItemModels.cs" />
     <Compile Include="Models\Catalog\SectionModels.cs" />
+    <Compile Include="Models\TreeViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Search\SearchEntryModel.cs" />
     <Compile Include="Models\WorkingChecklist\WorkingChecklistViewModel.cs" />
@@ -273,10 +292,18 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Checklist\Edit.cshtml" />
     <Content Include="Views\Checklist\Upload.cshtml" />
+    <Content Include="Views\Shared\_TreeView.cshtml" />
+    <Content Include="Views\Area\Index.cshtml" />
+    <Content Include="Views\Area\Show.cshtml" />
+    <Content Include="Views\Category\Show.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Checklist\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Catalog\" />
+    <Folder Include="Views\TreeViewControlle\" />
+    <Folder Include="Views\TreeView\" />
     <Folder Include="Views\WorkingChecklist\" />
   </ItemGroup>
   <ItemGroup>

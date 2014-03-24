@@ -52,6 +52,8 @@ namespace CheckIt.Entities
                 return null;
 
             Checklist chklst = new Checklist();
+            chklst.Content = text;
+
             //
             var lines = text.Split(new string[] { Environment.NewLine }, StringSplitOptions.None );
 

@@ -51,6 +51,7 @@ namespace CheckIt.Web
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(_containerProvider.ApplicationContainer));
 
+            MappingConfig.Configure();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

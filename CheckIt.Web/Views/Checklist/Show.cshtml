@@ -1,11 +1,11 @@
-﻿@using CheckIt.Web.Models.Catalog;
+﻿@using CheckIt.Web.Models.Catalog
 @model CheckIt.Web.Models.Catalog.ChecklistEditionModel
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Checklist " + Model.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Checklist Edition</h2>
+<h2>@Model.Title</h2>
 
 <div>
     <h3>@Model.Title</h3>

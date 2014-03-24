@@ -5,13 +5,13 @@ using System.Web;
 
 namespace CheckIt.Web.Models.Catalog
 {
-    public class ChecklistSummaryModels
+    public class ChecklistSummaryModel
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
-        public string ContentFragment { get; set; }
         public string Description { get; set; }
-        public string SectionsSummary { get; set; }
+        //public string ContentFragment { get; set; }
+        //public string SectionsSummary { get; set; }
         public string CreatedBy { get; set; }
 
     }
