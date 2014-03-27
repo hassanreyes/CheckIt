@@ -8,7 +8,6 @@
     <title>@ViewBag.Title - CheckIt</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -34,13 +33,13 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div id="leftCol" class="col-md-2">
+            <div id="leftCol" class="col-xs-12 col-sm-4 col-md-3">
                 <div class="well">
                     @Html.Partial("_WorkingChecklist", WorkingChecklistViewModel.Current)
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="container body-content">
+            <div id="mainCol" class="col-xs-12 col-sm-8 col-md-9">
+                <div id="maincontent" class="container-fluid">
                     @RenderBody()
                     <hr />
                     <footer>
@@ -51,7 +50,25 @@
         </div>
     </div>
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#mainCol").click(function () {
+                $("#mainCol").removeClass("col-xs-12 col-sm-4 col-md-3").addClass("col-xs-12 col-sm-8 col-md-9");
+                $("#leftCol").removeClass("col-xs-12 col-sm-8 col-md-9").addClass("col-xs-12 col-sm-4 col-md-3");
+            });
+
+            $("#leftCol").click(function () {
+                $("#leftCol").removeClass("col-xs-12 col-sm-4 col-md-3").addClass("col-xs-12 col-sm-8 col-md-9");
+                $("#mainCol").removeClass("col-xs-12 col-sm-8 col-md-9").addClass("col-xs-12 col-sm-4 col-md-3");
+            });
+
+        });
+    </script>
+
 </body>
 </html>
