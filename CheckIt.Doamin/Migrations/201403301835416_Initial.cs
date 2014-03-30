@@ -80,7 +80,7 @@ namespace CheckIt.Domain.Migrations
                         Id = c.Guid(nullable: false, identity: true),
                         Title = c.String(nullable: false, maxLength: 255),
                         Description = c.String(),
-                        Content = c.String(),
+                        Content = c.String(nullable: false, maxLength: 450),
                         Reference1 = c.String(),
                         Reference2 = c.String(),
                         Hints = c.Long(nullable: false),

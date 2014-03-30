@@ -1,0 +1,50 @@
+namespace CheckIt.Domain.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    using System.Text;
+    
+    public partial class FTS : DbMigration
+    {
+        public override void Up()
+        {
+            StringBuilder sqlCmd = new StringBuilder();
+
+            //Full-Text Index
+            sqlCmd = new StringBuilder();
+            sqlCmd.Append("sp_configure \"user instances enabled\",0; "); //SQLServer specific
+
+            //context.Database.ExecuteSqlCommand(sqlCmd.ToString());
+
+            //sqlCmd = new StringBuilder();
+            sqlCmd.Append("CREATE FULLTEXT CATALOG FTS_Checklists;"); //SQLServer specific
+
+            this.Sql(sqlCmd.ToString(), true);
+
+            sqlCmd = new StringBuilder();
+            sqlCmd.Append("CREATE FULLTEXT INDEX ON chkit.Checklists(Content) "); //SQLServer specific
+            sqlCmd.Append("KEY INDEX \"PK_chkit.Checklists\" ON FTS_Checklists; ");
+
+            this.Sql(sqlCmd.ToString(), true);
+
+        }
+        
+        public override void Down()
+        {
+            StringBuilder sqlCmd = new StringBuilder();
+
+            //Full-Text Index
+            sqlCmd = new StringBuilder();
+            sqlCmd.Append("sp_configure \"user instances enabled\",0;"); //SQLServer specific
+            sqlCmd.Append("DROP FULL TEXT INDEX ON chkit.Checklists;"); //SQLServer specific
+
+            this.Sql(sqlCmd.ToString(), true);
+
+            sqlCmd = new StringBuilder();
+            sqlCmd.Append("DROP FULLTEXT CATALOG FTS_Checklists;"); //SQLServer specific
+
+            this.Sql(sqlCmd.ToString());
+
+        }
+    }
+}

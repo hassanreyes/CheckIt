@@ -36,13 +36,10 @@ namespace CheckIt.Domain.Migrations
                 StringBuilder sqlCmd = new StringBuilder();
 
                 //Full-Text Index
-                sqlCmd.Append("CREATE FULLTEXT INDEX ON chkit.Checklists(Content) ");
-                sqlCmd.Append("KEY INDEX AX_Checklists_Content ON FTC_ChecklistsContetnt ");
-                sqlCmd.Append("WITH CHANGE_TRACKING AUTO ");
-
-                context.Database.ExecuteSqlCommand(sqlCmd.ToString());
+                //Moved to FTS Migration
 
                 //NLog table
+                sqlCmd = new StringBuilder();
                 sqlCmd.Append("IF NOT EXISTS (SELECT * FROM SysObjects WHERE Name='Logging' AND Xtype='U') ");
                 sqlCmd.Append("CREATE TABLE [dbo].[Logging]( ");
                 sqlCmd.Append("[Id] [int] IDENTITY(1,1) NOT NULL, ");
@@ -65,7 +62,7 @@ namespace CheckIt.Domain.Migrations
                 //sqlCmd.Append("IF NOT EXISTS (SELECT * FROM SysObjects WHERE Name='DF_NLogLogging_time_stamp' AND Xtype='U') ");
                 //sqlCmd.Append("ALTER TABLE [dbo].[NLog_Logging] ADD  CONSTRAINT [DF_NLogLogging_time_stamp]  DEFAULT (getdate()) FOR [time_stamp] ");
 
-                context.Database.ExecuteSqlCommand(sqlCmd.ToString());
+                //context.Database.ExecuteSqlCommand(sqlCmd.ToString());
 
                 context.Users.AddOrUpdate(
                     u => u.Id,

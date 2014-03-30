@@ -7,13 +7,13 @@ namespace CheckIt.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.2-21211")]
-    public sealed partial class Checklist_Content_Required : IMigrationMetadata
+    public sealed partial class FTS : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Checklist_Content_Required));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FTS));
         
         string IMigrationMetadata.Id
         {
-            get { return "201403300141395_Checklist_Content_Required"; }
+            get { return "201403301849248_FTS"; }
         }
         
         string IMigrationMetadata.Source

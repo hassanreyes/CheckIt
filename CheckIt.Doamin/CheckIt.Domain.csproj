@@ -55,13 +55,13 @@
     <Compile Include="CheckItContextFactory.cs" />
     <Compile Include="CheckItContext .cs" />
     <Compile Include="CheckItDbConfiguration.cs" />
-    <Compile Include="Migrations\201403222327581_Initial.cs" />
-    <Compile Include="Migrations\201403222327581_Initial.Designer.cs">
-      <DependentUpon>201403222327581_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201403301835416_Initial.cs" />
+    <Compile Include="Migrations\201403301835416_Initial.Designer.cs">
+      <DependentUpon>201403301835416_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201403300141395_Checklist_Content_Required.cs" />
-    <Compile Include="Migrations\201403300141395_Checklist_Content_Required.Designer.cs">
-      <DependentUpon>201403300141395_Checklist_Content_Required.cs</DependentUpon>
+    <Compile Include="Migrations\201403301849248_FTS.cs" />
+    <Compile Include="Migrations\201403301849248_FTS.Designer.cs">
+      <DependentUpon>201403301849248_FTS.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,12 +89,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201403222327581_Initial.resx">
-      <DependentUpon>201403222327581_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403301835416_Initial.resx">
+      <DependentUpon>201403301835416_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201403300141395_Checklist_Content_Required.resx">
-      <DependentUpon>201403300141395_Checklist_Content_Required.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201403301849248_FTS.resx">
+      <DependentUpon>201403301849248_FTS.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FTS_Migration_Code.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
