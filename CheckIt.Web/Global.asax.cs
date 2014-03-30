@@ -37,10 +37,6 @@ namespace CheckIt.Web
 
         protected void Application_Start()
         {
-            //ControllerBuilder.Current.SetControllerFactory(new ErrorHandlingControllerFactory());
-            //ConfigurationItemFactory.Default.LayoutRenderers.RegisterDefinition("utc_date", typeof(CheckIt.Web.Infras.Services.Logging.NLog.UtcDateRenderer));
-            //ConfigurationItemFactory.Default.LayoutRenderers.RegisterDefinition("web_variables", typeof(CheckIt.Web.Infras.Services.Logging.NLog.WebVariablesRenderer));
-            
             string nlogPath = Server.MapPath("nlog-web.log");
             InternalLogger.LogFile = nlogPath;
             InternalLogger.LogLevel = NLog.LogLevel.Trace;
@@ -58,6 +54,10 @@ namespace CheckIt.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             System.Data.Entity.Database.SetInitializer<CheckIt.Domain.CheckItContext>(null);
+
+            //Preload Anonymous user
+            CheckItContext dbCtx = DependencyResolver.Current.GetService<CheckItContext>();
+            dbCtx.Users.Where(x => x.UserName == CheckItContext.AnonymousUserName);
         }
 
         /// <summary>

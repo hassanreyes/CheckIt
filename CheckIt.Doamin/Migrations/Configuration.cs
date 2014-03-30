@@ -33,9 +33,16 @@ namespace CheckIt.Domain.Migrations
 
             try
             {
-                //NLog table
                 StringBuilder sqlCmd = new StringBuilder();
 
+                //Full-Text Index
+                sqlCmd.Append("CREATE FULLTEXT INDEX ON chkit.Checklists(Content) ");
+                sqlCmd.Append("KEY INDEX AX_Checklists_Content ON FTC_ChecklistsContetnt ");
+                sqlCmd.Append("WITH CHANGE_TRACKING AUTO ");
+
+                context.Database.ExecuteSqlCommand(sqlCmd.ToString());
+
+                //NLog table
                 sqlCmd.Append("IF NOT EXISTS (SELECT * FROM SysObjects WHERE Name='Logging' AND Xtype='U') ");
                 sqlCmd.Append("CREATE TABLE [dbo].[Logging]( ");
                 sqlCmd.Append("[Id] [int] IDENTITY(1,1) NOT NULL, ");

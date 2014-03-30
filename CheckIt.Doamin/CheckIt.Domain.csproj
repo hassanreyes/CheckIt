@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201403222327581_Initial.Designer.cs">
       <DependentUpon>201403222327581_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403300141395_Checklist_Content_Required.cs" />
+    <Compile Include="Migrations\201403300141395_Checklist_Content_Required.Designer.cs">
+      <DependentUpon>201403300141395_Checklist_Content_Required.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +91,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403222327581_Initial.resx">
       <DependentUpon>201403222327581_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403300141395_Checklist_Content_Required.resx">
+      <DependentUpon>201403300141395_Checklist_Content_Required.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

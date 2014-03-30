@@ -36,8 +36,8 @@ namespace CheckIt.Domain
             base(connStringName)
         {
             this.Configuration.LazyLoadingEnabled = false;
-            this.Configuration.ProxyCreationEnabled = false;
-            this.Configuration.AutoDetectChangesEnabled = false;
+            this.Configuration.ProxyCreationEnabled = true;
+            this.Configuration.AutoDetectChangesEnabled = true;
 
             this.SchemaName = "chkit";
 

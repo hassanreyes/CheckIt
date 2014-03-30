@@ -1,4 +1,5 @@
-﻿@model CheckIt.Web.Models.Catalog.ChecklistEditionModel
+﻿@using CheckIt.Entities;
+@model IEnumerable<Category>
 @{
     ViewBag.Title = "Upload";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,4 +12,6 @@
     @Html.AntiForgeryToken()
     <input type="file" name="file" />
     <input type="submit" name="Submit" id="Submit" value="Upload" />
+    
+    @Html.DropDownList("selectedCategory", new SelectList(Model, "Id", "Name"));
 }

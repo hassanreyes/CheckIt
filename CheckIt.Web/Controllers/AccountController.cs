@@ -60,7 +60,7 @@ namespace CheckIt.Web.Controllers
                 }
                 else
                 {
-                    _logger.Info("User " + user.UserName + " could not logged in");
+                    _logger.Info("User could not logged in");
 
                     ModelState.AddModelError("", Resources.Resources.InvalidUsernameAndPassword);
                 }
