@@ -1,9 +1,12 @@
-﻿@using CheckIt.Web.Models.Catalog
+﻿@using CheckIt.Web.Infras.Extensions
+@using CheckIt.Web.Models.Catalog
 @model CheckIt.Web.Models.Catalog.ChecklistEditionModel
 @{
     ViewBag.Title = "Checklist " + Model.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@Html.BackLink("Index")
 
 <h2>@Model.Title</h2>
 

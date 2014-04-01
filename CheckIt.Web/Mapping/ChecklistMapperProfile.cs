@@ -19,11 +19,11 @@ namespace CheckIt.Web.Mapping
                         .ForMember(x => x.Content, y => y.MapFrom(z => z.Content))
                         .ForMember(x => x.Sections, y => y.MapFrom(z => z.Sections));
 
-            Mapper.CreateMap<IEnumerable<ChecklistSummaryModel>, IEnumerable<Checklist>>();
             Mapper.CreateMap<Checklist, ChecklistSummaryModel>()
                         .ForMember(x => x.Title, y => y.MapFrom(z => z.Title))
                         .ForMember(x => x.Description, y => y.MapFrom(z => z.Description))
                         .ForMember(x => x.CreatedBy, y => y.MapFrom(z => z.CreatedBy));
+            Mapper.CreateMap<IEnumerable<ChecklistSummaryModel>, IEnumerable<Checklist>>();
         }
     }
 }

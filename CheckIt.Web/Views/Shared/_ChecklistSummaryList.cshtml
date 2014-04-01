@@ -1,0 +1,17 @@
+﻿@using CheckIt.Web.Models.Catalog
+@model IEnumerable<ChecklistSummaryModel>
+<ul>
+    @foreach (ChecklistSummaryModel chklst in Model)
+    {
+        <li>
+            <div>
+                @Html.ActionLink(chklst.Title, "Show", "Checklist", routeValues: new { id = chklst.Id }, htmlAttributes: new { title = chklst.Title })
+                <p>
+                    @chklst.Description
+                </p>
+            </div>
+            <br />
+        </li>
+
+    }
+</ul>

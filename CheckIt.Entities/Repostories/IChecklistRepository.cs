@@ -9,6 +9,8 @@ namespace CheckIt.Entities
 
         IEnumerable<Checklist> GetChecklists(Category category = null);
 
+        IEnumerable<Checklist> GetChecklists(Guid[] ids);
+
         bool SaveChecklist(Checklist chklst);
 
         bool DeleteChecklist(Category chklst);
@@ -16,5 +18,7 @@ namespace CheckIt.Entities
         bool IncreaseHints(Guid id);
 
         bool SetRating(Guid id, short rating);
+
+        Guid[] SearchText(string searchText);
     }
 }

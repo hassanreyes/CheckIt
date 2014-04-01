@@ -1,4 +1,4 @@
-﻿@using CheckIt.Entities
+﻿@using CheckIt.Web.Models.Catalog
 @model CheckIt.Web.Models.Search.SearchEntryModel
 @{
     ViewBag.Title = "Search";
@@ -10,13 +10,6 @@
     <h2>Search Result for <i>@Html.DisplayFor(model => model.QueryText)</i> </h2>
     @Html.Partial("_Search")
     <br />
-    foreach (Checklist chklst in Model.Result)
-    {
-        <div>
-            <h3>@chklst.Title</h3>
-            <p>
-                @chklst.Description
-            </p>
-        </div>
-    }
+    <h3>Available Checklists</h3>
+    @Html.Partial("_ChecklistSummaryList", Model.Result)
 }

@@ -5,11 +5,21 @@ using System.Web;
 using System.Web.Mvc;
 using CheckIt.Web.Models.Search;
 using CheckIt.Entities;
+using CheckIt.Web.Infras.Services;
+using CheckIt.Web.Models.Catalog;
+using AutoMapper;
 
 namespace CheckIt.Web.Controllers
 {
     public class SearchController : Controller
     {
+        public ICatalogService CatalogService { get; set; }
+
+        public SearchController(ICatalogService catService)
+        {
+            this.CatalogService = catService;
+        }
+
         //
         // GET: /Search/
         public ActionResult Index()
@@ -22,20 +32,20 @@ namespace CheckIt.Web.Controllers
             if (String.IsNullOrWhiteSpace(searchEntry.QueryText))
                 return RedirectToAction("Index");
 
-            searchEntry.Result = new List<Checklist>();
-            searchEntry.Result.Add(new Entities.Checklist()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "Demo 1",
-                    Description = "Este es solo una demostracion"
-                });
+            searchEntry.Ids = this.CatalogService.SearchChecklsitContent(searchEntry.QueryText);
 
-            searchEntry.Result.Add(new Entities.Checklist()
+            IEnumerable<Checklist> chklst = this.CatalogService.Checklists.GetChecklists(searchEntry.Ids);
+            IEnumerable<ChecklistSummaryModel> result = null;
+
+            if(chklst != null)
             {
-                Id = Guid.NewGuid(),
-                Title = "Demo 2",
-                Description = "Este tambien es solo una demostracion"
-            });
+                result = Mapper.Map<IEnumerable<Checklist>, IEnumerable<ChecklistSummaryModel>>(chklst);
+            }
+
+            if (result != null)
+                searchEntry.Result = result;
+            else
+                searchEntry.Result = new List<ChecklistSummaryModel>();
 
             return View(searchEntry);
         }
