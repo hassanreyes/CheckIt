@@ -16,12 +16,15 @@
             </ul>
             foreach (Section sec in Model.Sections)
             {
-                <header>sec.Name</header>
+                if (!"General".Equals(sec.Name))
+                {
+                    <header>@sec.Name</header>
+                }
                 <ul>
-                    foreach (Item item in sec.Items)
+                    @foreach (Item item in sec.Items)
                     {
                         <li>
-                            <p>item.Content</p>
+                            <p>@item.Content</p>
                         </li>
                     }
                 </ul>
@@ -33,6 +36,7 @@
                 Workig checklist was not creaed
             </p>
         }
+        <br />
         @Html.ActionLink("Upload Checklist", "Upload", "Checklist", routeValues: null, htmlAttributes: new { id = "uploadChecklistLink" })
     </div>
 }

@@ -5,31 +5,34 @@
     ViewBag.Title = "Checklist " + Model.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@Html.BackLink("Index")
-
-<h2>@Model.Title</h2>
-
-<div>
-    <h3>@Model.Title</h3>
-    <p>@Model.Description</p>
-    <br />
-    @foreach (SectionEditionModel sec in Model.Sections)
-    {
-        <div style="padding-left: 20px; ">
-            <h4>@sec.Name</h4>
-            <p>@sec.Description</p>
-
-            <ul>
-                @foreach (ItemEditionModel item in sec.Items)
-                {
-                    <li>
-                        <div style="padding-left: 30px; ">
-                            <p>@item.Content</p>
-                        </div>
-                    </li>
-                }
-            </ul>
-        </div>
-    }
+<div id="action_bar" class="container-fluid">
+    <ul class="nav nav-pills">
+        <li>@Html.BackLink("Index")</li>
+    </ul>
 </div>
+
+    <h2>@Model.Title</h2>
+
+    <div>
+        <h3>@Model.Title</h3>
+        <p>@Model.Description</p>
+        <br />
+        @foreach (SectionEditionModel sec in Model.Sections)
+        {
+            <div style="padding-left: 20px; ">
+                <h4>@sec.Name</h4>
+                <p>@sec.Description</p>
+
+                <ul>
+                    @foreach (ItemEditionModel item in sec.Items)
+                    {
+                        <li>
+                            <div style="padding-left: 30px; ">
+                                <p>@item.Content</p>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>

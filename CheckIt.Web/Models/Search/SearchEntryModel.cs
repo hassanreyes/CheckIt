@@ -9,11 +9,13 @@ namespace CheckIt.Web.Models.Search
 {
     public class SearchEntryModel
     {
+        public SearchEntryModel()
+        {
+        }
+
         [Required]
         [DisplayName("Search Keyword(s)")]
         public string QueryText { get; set; }
-
-        public int PagingSize { get; set; }
 
         public int CurrentPage { get; set; }
 

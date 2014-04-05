@@ -8,6 +8,8 @@ using CheckIt.Entities;
 using CheckIt.Web.Infras.Services;
 using CheckIt.Web.Models.Catalog;
 using AutoMapper;
+using CheckIt.Web.Infras.Helpers;
+using CheckIt.Web.Infras.Extensions;
 
 namespace CheckIt.Web.Controllers
 {
@@ -32,22 +34,38 @@ namespace CheckIt.Web.Controllers
             if (String.IsNullOrWhiteSpace(searchEntry.QueryText))
                 return RedirectToAction("Index");
 
+
             searchEntry.Ids = this.CatalogService.SearchChecklsitContent(searchEntry.QueryText);
+            this.Session[Constants.SearchResultKey] = searchEntry;
 
-            IEnumerable<Checklist> chklst = this.CatalogService.Checklists.GetChecklists(searchEntry.Ids);
-            IEnumerable<ChecklistSummaryModel> result = null;
+            return Navigate(0);
+        }
 
-            if(chklst != null)
+        public ActionResult Navigate(int ? page)
+        {
+            var value = this.Session[Constants.SearchResultKey];
+            if (value == null || !(value is SearchEntryModel))
             {
-                result = Mapper.Map<IEnumerable<Checklist>, IEnumerable<ChecklistSummaryModel>>(chklst);
+                return RedirectToAction("Index");
             }
 
-            if (result != null)
-                searchEntry.Result = result;
-            else
-                searchEntry.Result = new List<ChecklistSummaryModel>();
+            SearchEntryModel model = value as SearchEntryModel;
+            UserPreferences pref = System.Web.HttpContext.Current.Session.GetUserPreferences();
+            page = page ?? 0;
+            List<Guid> ids = new List<Guid>();
+            ids.AddRange(model.Ids);
+            model.CurrentPage = page.Value;
 
-            return View(searchEntry);
+            IEnumerable<Checklist> chklst = this.CatalogService.Checklists.GetChecklists(ids
+                                                .Skip(page.Value * pref.PageSize)
+                                                .Take(pref.PageSize).ToArray());
+            
+            if (chklst != null)
+            {
+                model.Result = Mapper.Map<IEnumerable<Checklist>, IEnumerable<ChecklistSummaryModel>>(chklst);
+            }
+
+            return View("Search", model);
         }
 	}
 }

@@ -66,6 +66,7 @@
     <Compile Include="Entities\DichotomyAnswer.cs" />
     <Compile Include="Entities\DichotomyItem.cs" />
     <Compile Include="Entities\IContentStringSettable.cs" />
+    <Compile Include="Entities\UserPreferences.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Entities\Favorite.cs" />
     <Compile Include="Entities\Folder.cs" />
