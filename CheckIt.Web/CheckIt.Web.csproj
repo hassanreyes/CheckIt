@@ -203,6 +203,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChecklistController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MyChecklistController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\WorkingChecklist\WorkingChecklistController.cs" />
     <Compile Include="Global.asax.cs">
@@ -219,6 +220,7 @@
     <Compile Include="Models\Catalog\ChecklistModels.cs" />
     <Compile Include="Models\Catalog\ItemModels.cs" />
     <Compile Include="Models\Catalog\SectionModels.cs" />
+    <Compile Include="Models\MyChecklist\MyChecklistModels.cs" />
     <Compile Include="Models\TreeViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Search\SearchEntryModel.cs" />
@@ -231,6 +233,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mychecklist.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -321,6 +324,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\mychecklist.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -365,6 +369,10 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Checklist\Show.cshtml" />
     <Content Include="Views\Shared\_ChecklistSummaryList.cshtml" />
+    <Content Include="Views\MyChecklist\_Edition.cshtml" />
+    <Content Include="Views\MyChecklist\_TitleEdition.cshtml" />
+    <Content Include="Views\MyChecklist\Index.cshtml" />
+    <Content Include="Views\Shared\_MyChecklist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

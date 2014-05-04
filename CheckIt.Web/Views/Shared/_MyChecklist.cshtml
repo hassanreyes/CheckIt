@@ -1,0 +1,43 @@
+﻿
+@using CheckIt.Web.Infras.Extensions
+@using CheckIt.Web.Models.Catalog
+@model CheckIt.Web.Models.Catalog.ChecklistEditionModel
+
+@Styles.Render("~/bundles/mychklst_css")
+@Scripts.Render("~/bundles/jquery")
+<input id="chklst_id" type="hidden" value="@Model.Id" />
+<input id="chklst_token" type="hidden" value="0" />
+<div id="chklst_divtitle">
+    <span align="center">
+        <input id="chklst_title" name="mychklst_title" class="chklst_title" placeholder="type title here" value="@Model.Title" />
+    </span>
+    <br />
+    <textarea id="chklst_desc" name="mychklst_desc" class="chklst_desc" placeholder="type description here" rows="2">@Model.Description</textarea>
+</div>
+<div id="chklst_body">
+    @if (Model.Sections != null)
+{
+    foreach (SectionEditionModel sec in Model.Sections)
+    {
+        <div class="chklst_section">
+                <input name="mychklst_section_name" class="chklst_section_name" placeholder="type section name here" value="@sec.Name" />
+                <br />
+                <input name="mychklst_section_desc" class="chklst_section_desc" placeholder="type section description here" value="@sec.Description" />
+                <br />
+                <ol class="chklst_items">
+                    @if (sec.Items != null)
+                {
+                    foreach (ItemEditionModel item in sec.Items)
+                    {
+                        <li class="chklst_lstitem">
+                                <textarea name="mychklst_item" class="chklst_item" rows="1">@item.Content</textarea>
+                            </li>
+                    }
+                }
+                </ol>
+            </div>
+    }
+}
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/mychklst_js")

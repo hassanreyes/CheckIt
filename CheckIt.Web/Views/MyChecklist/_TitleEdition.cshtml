@@ -1,0 +1,21 @@
+﻿
+
+<script type="text/javascript">
+    $("textarea#Content").keypress(function (e) {
+        var key = e.which || e.keyCode;
+        if(key == 13)
+        {
+            $("form#ajaxForm").trigger().submit();
+        }
+
+    });
+</script>
+
+<form id="ajaxForm" method="post" data-ajax-update="#result" data-ajax-mode="replace" data-ajax="true" action="/CheckIt.Web/MyChecklist">
+    <input id="ContentType" type="hidden" value="Title"/>
+    <textarea id="Content"></textarea>
+</form>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/jqueryval")

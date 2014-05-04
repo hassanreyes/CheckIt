@@ -38,7 +38,7 @@ namespace CheckIt.Entities
 
     public partial class Checklist
     {
-        private enum LineType
+        public enum LineType
         {
             Unknown,
             Title,

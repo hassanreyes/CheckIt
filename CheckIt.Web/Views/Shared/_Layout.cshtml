@@ -1,4 +1,4 @@
-﻿@using CheckIt.Web.Models.WorkingChecklist;
+﻿@using CheckIt.Web.Models.Catalog;
 
 <!DOCTYPE html>
 <html>
@@ -34,8 +34,8 @@
     <div class="container-fluid">
         <div class="row">
             <div id="leftCol" class="col-xs-12 col-sm-4 col-md-3">
-                <div class="well">
-                    @Html.Partial("_WorkingChecklist", WorkingChecklistViewModel.Current)
+                <div class="container-fluid">
+                    @Html.Partial("_MyChecklist", new ChecklistEditionModel())
                 </div>
             </div>
             <div id="mainCol" class="col-xs-12 col-sm-8 col-md-9">
